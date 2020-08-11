@@ -1,0 +1,2 @@
+rm -rf /var/mobile/Library/Preferences/com.ajaidan.mavalryprefs.plist
+echo "Prefs file removed."

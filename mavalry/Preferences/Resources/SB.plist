@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<!-- general cell -->
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>General</string>
+		</dict>
+		<!-- enable/disable button -->
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>cellClass</key>
+  			<string>MAVSwitchCell</string>
+  			<key>switchColor</key>
+  			<string>#9836C5</string>
+ 			 <key>switchColorAlpha</key>
+  			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>wantsHiddenLabels</string>
+			<key>label</key>
+			<string>Hide Icon Labels</string>
+			<key>PostNotification</key>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+		</dict>
+
+		<!-- enable/disable button -->
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>cellClass</key>
+  			<string>MAVSwitchCell</string>
+  			<key>switchColor</key>
+  			<string>#9836C5</string>
+ 			 <key>switchColorAlpha</key>
+  			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>hideFolderBackground</string>
+			<key>label</key>
+			<string>Hide Folder Background</string>
+			<key>PostNotification</key>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+		</dict>
+
+		<!-- enable/disable page dots button -->
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>cellClass</key>
+  			<string>MAVSwitchCell</string>
+  			<key>switchColor</key>
+  			<string>#9836C5</string>
+ 			 <key>switchColorAlpha</key>
+  			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>wantsHiddenPageDots</string>
+			<key>label</key>
+			<string>Hide Page Dots</string>
+			<key>PostNotification</key>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+		</dict>
+
+		<!-- enable/disable transparent dock button -->
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>cellClass</key>
+  			<string>MAVSwitchCell</string>
+  			<key>switchColor</key>
+  			<string>#9836C5</string>
+ 			 <key>switchColorAlpha</key>
+  			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>wantsTransparentDock</string>
+			<key>label</key>
+			<string>Transparent Dock</string>
+			<key>PostNotification</key>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+		</dict>
+
+		<!-- enable/disable hiding wantsHomeBar -->
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>cellClass</key>
+  			<string>MAVSwitchCell</string>
+  			<key>switchColor</key>
+  			<string>#9836C5</string>
+ 			 <key>switchColorAlpha</key>
+  			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>wantsHomeBar</string>
+			<key>label</key>
+			<string>Hide Home Bar</string>
+			<key>PostNotification</key>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>cellClass</key>
+  			<string>MAVSwitchCell</string>
+  			<key>switchColor</key>
+  			<string>#9836C5</string>
+ 			 <key>switchColorAlpha</key>
+  			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>noTodayHS</string>
+			<key>label</key>
+			<string>Hide Today View</string>
+			<key>PostNotification</key>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>cellClass</key>
+  			<string>MAVSwitchCell</string>
+  			<key>switchColor</key>
+  			<string>#9836C5</string>
+ 			 <key>switchColorAlpha</key>
+  			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>noSpotlight</string>
+			<key>label</key>
+			<string>Remove Spotlight Search</string>
+			<key>PostNotification</key>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>SpringBoard</string>
+</dict>
+</plist>

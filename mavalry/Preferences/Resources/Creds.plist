@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string></string>
+		</dict>
+
+        <dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Tweak made by:</string>
+			<key>subtitle</key>
+			<string>ajaidan0</string>
+			<key>icon</key>
+			<string>GitHub.png</string>
+			<key>url</key>
+			<string>https://github.com/ajaidan0</string>
+		</dict>
+
+         <dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Artwork and Volume Haptics:</string>
+			<key>subtitle</key>
+			<string>samoht</string>
+			<key>icon</key>
+			<string>reddit.png</string>
+			<key>url</key>
+			<string>https://reddit.com/bobbyboys301</string>
+		</dict>
+
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>OBWelcomeController:</string>
+			<key>subtitle</key>
+			<string>Simalary (Chris)</string>
+			<key>icon</key>
+			<string>GitHub.png</string>
+			<key>url</key>
+			<string>https://gist.github.com/chrisharper22/17541f484f05542b0ad78a1e334835da</string>
+		</dict>
+
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Fixing buggy haptics:</string>
+			<key>subtitle</key>
+			<string>Thomz</string>
+			<key>icon</key>
+			<string>GitHub.png</string>
+			<key>url</key>
+			<string>https://github.com/thomz07</string>
+		</dict>
+
+    </array>
+	<key>title</key>
+	<string>Credits</string>
+</dict>
+</plist>

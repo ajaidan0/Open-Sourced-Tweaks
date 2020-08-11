@@ -1,0 +1,159 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+
+		<!-- Enable/Disable label -->
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Volume</string>
+		</dict>
+
+		<!-- Enable/Disable button -->
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>cellClass</key>
+  			<string>MAVSwitchCell</string>
+  			<key>switchColor</key>
+  			<string>#9836C5</string>
+ 			 <key>switchColorAlpha</key>
+  			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>wantsHapticVol</string>
+			<key>label</key>
+			<string>Haptic Volume Buttons</string>
+			<key>PostNotification</key>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+		</dict>
+
+		<!-- haptics cell -->
+		<dict>
+			<key>cell</key>
+			<string>PSSegmentCell</string>
+			<key>default</key>
+			<integer>1</integer>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>hapticPref</string>
+			<key>validValues</key>
+			<array>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+			</array>
+			<key>validTitles</key>
+			<array>
+				<string>Light</string>
+				<string>Medium</string>
+				<string>Strong</string>
+			</array>
+			<key>alignment</key>
+			<string>5</string>
+			<key>PostNotification</key>	
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+        </dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Volume Steps:</string>
+			<key>footerText</key>
+			<string>0 disables this setting and makes volume work normally.</string>
+		</dict>
+
+		<dict>
+            <key>cell</key>
+            <string>PSSliderCell</string>
+            <key>default</key>
+            <integer>0</integer>
+            <key>defaults</key>
+            <string>com.ajaidan.mavalryprefs</string>
+            <key>key</key>
+            <string>volumePref</string>
+            <key>min</key>
+            <real>0</real>
+            <key>max</key>
+            <real>1</real>
+            <key>showValue</key>
+            <true/>
+            <key>isSegmented</key>
+            <true/>
+			<key>segmentCount</key>
+			<integer>100</integer>
+            <key>PostNotification</key>
+            <string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+        </dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Screenshot</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>cellClass</key>
+  			<string>MAVSwitchCell</string>
+  			<key>switchColor</key>
+  			<string>#9836C5</string>
+ 			 <key>switchColorAlpha</key>
+  			<real>1.0</real>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>wantsHapticScreenshot</string>
+			<key>label</key>
+			<string>Haptic Screenshot</string>
+			<key>PostNotification</key>
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+		</dict>
+
+		<!-- haptics cell -->
+		<dict>
+			<key>cell</key>
+			<string>PSSegmentCell</string>
+			<key>default</key>
+			<integer>1</integer>
+			<key>defaults</key>
+			<string>com.ajaidan.mavalryprefs</string>
+			<key>key</key>
+			<string>screenshotPref</string>
+			<key>validValues</key>
+			<array>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+			</array>
+			<key>validTitles</key>
+			<array>
+				<string>Light</string>
+				<string>Medium</string>
+				<string>Strong</string>
+			</array>
+			<key>alignment</key>
+			<string>5</string>
+			<key>PostNotification</key>	
+			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+        </dict>
+
+	</array>
+	<key>title</key>
+	<string>Haptics</string>
+</dict>
+</plist>

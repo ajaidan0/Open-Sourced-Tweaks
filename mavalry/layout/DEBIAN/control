@@ -1,0 +1,12 @@
+Package: com.ajaidan.mavalry
+Name: Mavalry
+Depends: mobilesubstrate, firmware (>= 13.0), ws.hbang.common, preferenceloader
+Version: 2.0.2-b1
+Architecture: iphoneos-arm
+Description: iOS customization, done right.
+Maintainer: ajaidan0
+Author: ajaidan0
+Section: Tweaks
+icon: file:///Library/PreferenceBundles/MavalryPrefs.bundle/icon@3x.png
+Sileodepiction: https://raw.githubusercontent.com/ajaidan0/ajaidan0.xyz/master/depictions/mavalry/mavalry.json
+Depiction: https://ajaidan0.xyz/depictions/mavalry/mavalry.html

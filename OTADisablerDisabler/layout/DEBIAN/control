@@ -1,0 +1,9 @@
+Package: com.ajaidan.otadisablerdisabler
+Name: OTADisablerDisabler
+Version: 1.0.1
+Architecture: iphoneos-arm
+Description: A script to remove the effects of OTADisabler.
+Maintainer: ajaidan0
+Author: ajaidan0
+Section: System
+Tag: role::hacker

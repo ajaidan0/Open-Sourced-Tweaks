@@ -1,0 +1,9 @@
+Package: com.ajaidan.nomorescrollstotop
+Name: NoMoreScrollstoTop
+Depends: mobilesubstrate, preferenceloader, com.spark.libsparkapplist
+Version: 1.1.1
+Architecture: iphoneos-arm
+Description: A simple tweak to disable scrollsToTop in **almost** all apps.
+Maintainer: ajaidan0
+Author: ajaidan0
+Section: Tweaks

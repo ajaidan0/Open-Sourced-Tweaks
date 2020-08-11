@@ -17,7 +17,9 @@
 %group ReachTimer
 %hook SBReachabilityManager
 
--(void)_setKeepAliveTimer {}
+-(void)_setKeepAliveTimer {
+	return;
+}
 
 %end
 %end
@@ -163,19 +165,14 @@
 %hook SpringBoard
 
 -(void)takeScreenshot {
-
 	%orig;
-			
 	if (screenshotPref == 1) {
 		AudioServicesPlaySystemSound(1519); // light
-
 	} else if (screenshotPref == 2) {
 		AudioServicesPlaySystemSound(1520); // medium
-
 	} else if (screenshotPref == 3) {
 		AudioServicesPlaySystemSound(1521); // strong
 	}
-	
 }
 
 %end
@@ -185,41 +182,33 @@
 %hook SBVolumeControl 
 
 - (void)increaseVolume {
-
-	%orig;
-			
+	%orig;	
 	if (hapticPref == 1) {
 		AudioServicesPlaySystemSound(1519); // light
-
 	} else if (hapticPref == 2) {
 		AudioServicesPlaySystemSound(1520); // medium
-
 	} else if (hapticPref == 3) {
 		AudioServicesPlaySystemSound(1521); // strong
-	}
-	
+	}	
 }
 
 - (void)decreaseVolume {
-
-	%orig;
-			
+	%orig;	
 	if (hapticPref == 1) {
 		AudioServicesPlaySystemSound(1519); // light
-
 	} else if (hapticPref == 2) {
 		AudioServicesPlaySystemSound(1520); // medium
-
 	} else if (hapticPref == 3) {
 		AudioServicesPlaySystemSound(1521); // strong
-	}
-	
+	}	
 }
+
 %end
 %end
 
 %group VolumeStep
 %hook SBVolumeControl
+
 - (float)volumeStepUp {
     return (volumePref); //possible values from 0.01 -> 1.0 
 }
@@ -227,22 +216,12 @@
 - (float)volumeStepDown {
     return (volumePref);
 }
+
 %end
 %end
 
 // Loads prefs and inits
 %ctor {
-	RLog(@"------");
-	RLog(@"");
-	NSArray* dirs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/.mavalry"
-    	                                                                error:NULL];
-	[dirs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    	NSString *filename = (NSString *)obj;
-		RLog(@"Version: %@", filename);
-	}];
-	RLog(@"");
-	RLog(@"Tweak is loading.");
-	%init;
 	HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.ajaidan.mavalryprefs"];
 	[preferences registerBool:&isEnabled default:NO forKey:@"isEnabled"];
 	[preferences registerBool:&moonGone default:NO forKey:@"moonGone"];
@@ -263,6 +242,9 @@
 	[preferences registerFloat:&hapticPref default:1 forKey:@"hapticPref"];
 	[preferences registerFloat:&volumePref default:0 forKey:@"volumePref"];
 	[preferences registerFloat:&screenshotPref default:1 forKey:@"screenshotPref"];
+	RLog(@"------");
+	RLog(@"");
+	RLog(@"Tweak is loading.");
 	if (isEnabled) {
 		RLog(@"Tweak is enabled.");
 		if (moonGone) %init(DNDNotifs); else {}

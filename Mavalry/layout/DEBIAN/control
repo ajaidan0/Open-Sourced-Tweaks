@@ -1,7 +1,7 @@
 Package: com.ajaidan.mavalry
 Name: Mavalry
 Depends: mobilesubstrate, firmware (>= 13.0), ws.hbang.common, preferenceloader
-Version: 2.0.2-b1
+Version: 2.0.1
 Architecture: iphoneos-arm
 Description: iOS customization, done right.
 Maintainer: ajaidan0

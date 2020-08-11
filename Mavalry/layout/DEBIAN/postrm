@@ -1,0 +1,5 @@
+rm -rf /var/mobile/Library/Preferences/com.ajaidan.mavalryprefs.plist
+echo "Prefs file removed..."
+rm -rf /var/mobile/.mavalry
+echo "Removed version tracker."
+echo "Thanks for trying Mavalry!"

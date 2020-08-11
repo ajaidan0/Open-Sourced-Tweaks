@@ -1,0 +1,2 @@
+[ ! -f /var/mobile/.mavalry ] && mkdir -p /var/mobile/.mavalry/ && echo "Installing version tracker..."
+touch /var/mobile/.mavalry/v-2.0.1 && echo "Installed version tracker."

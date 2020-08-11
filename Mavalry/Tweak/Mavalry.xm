@@ -1,4 +1,4 @@
-// Mavalry v-2.0.2 b1
+// Mavalry v-2.0.1
 // Copyright (c) ajaidan0 2020
 
 #import "Mavalry.h"
@@ -101,9 +101,11 @@
 
 %group PageDots
 %hook SBIconListPageControl
+
 - (void)setHidden:(BOOL)arg1 {
     %orig(YES);
 }
+
 %end
 %end
 
@@ -113,11 +115,16 @@
 	arg1 = 0;
 	%orig(arg1);
 }
+
 %end
+
 %hook SBFloatingDockView
--(UIView *)backgroundView {
-	return nil;
+
+- (void)setBackgroundAlpha:(double)arg1 {
+	arg1 = 0;
+	%orig(arg1);
 }
+
 %end
 %end
 
@@ -154,40 +161,59 @@
 
 %group Screenshot
 %hook SpringBoard
+
 -(void)takeScreenshot {
+
 	%orig;
+			
 	if (screenshotPref == 1) {
 		AudioServicesPlaySystemSound(1519); // light
+
 	} else if (screenshotPref == 2) {
 		AudioServicesPlaySystemSound(1520); // medium
+
 	} else if (screenshotPref == 3) {
 		AudioServicesPlaySystemSound(1521); // strong
 	}
+	
 }
+
 %end
 %end
 
 %group HapticVolume
 %hook SBVolumeControl 
+
 - (void)increaseVolume {
-	%orig;		
+
+	%orig;
+			
 	if (hapticPref == 1) {
 		AudioServicesPlaySystemSound(1519); // light
+
 	} else if (hapticPref == 2) {
 		AudioServicesPlaySystemSound(1520); // medium
-	} else if (hapticPref == 3) {
-		AudioServicesPlaySystemSound(1521); // strong
-	}	
-}
-- (void)decreaseVolume {
-	%orig;	
-	if (hapticPref == 1) {
-		AudioServicesPlaySystemSound(1519); // light
-	} else if (hapticPref == 2) {
-		AudioServicesPlaySystemSound(1520); // medium
+
 	} else if (hapticPref == 3) {
 		AudioServicesPlaySystemSound(1521); // strong
 	}
+	
+}
+
+- (void)decreaseVolume {
+
+	%orig;
+			
+	if (hapticPref == 1) {
+		AudioServicesPlaySystemSound(1519); // light
+
+	} else if (hapticPref == 2) {
+		AudioServicesPlaySystemSound(1520); // medium
+
+	} else if (hapticPref == 3) {
+		AudioServicesPlaySystemSound(1521); // strong
+	}
+	
 }
 %end
 %end
@@ -197,6 +223,7 @@
 - (float)volumeStepUp {
     return (volumePref); //possible values from 0.01 -> 1.0 
 }
+
 - (float)volumeStepDown {
     return (volumePref);
 }
@@ -206,6 +233,14 @@
 // Loads prefs and inits
 %ctor {
 	RLog(@"------");
+	RLog(@"");
+	NSArray* dirs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/.mavalry"
+    	                                                                error:NULL];
+	[dirs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    	NSString *filename = (NSString *)obj;
+		RLog(@"Version: %@", filename);
+	}];
+	RLog(@"");
 	RLog(@"Tweak is loading.");
 	%init;
 	HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.ajaidan.mavalryprefs"];

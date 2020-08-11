@@ -1,6 +1,8 @@
 #!/bin/bash
 # thanks c0dine lol
 
+echo "Starting commit."
+
 rm -rf */.theos
 rm -rf */packages
 git add .

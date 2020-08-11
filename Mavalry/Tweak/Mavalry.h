@@ -1,4 +1,4 @@
-// Mavalry v-2.0.1
+// Mavalry
 // Copyright (c) ajaidan0 2020
 
 #import <UIKit/UIControl.h>

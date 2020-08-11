@@ -44,7 +44,7 @@
 
 }
 
-- (NSUInteger)largeTitleStyle {
+- (HBAppearanceSettingsLargeTitleStyle)largeTitleStyle {
     return 2;
 }
 

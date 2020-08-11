@@ -1,4 +1,5 @@
 #!/bin/bash
+# thanks c0dine lol
 
 rm -rf */.theos
 rm -rf */packages

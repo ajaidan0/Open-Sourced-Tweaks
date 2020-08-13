@@ -1,8 +1,13 @@
 // Aeolus
 // Copyright (c) ajaidan0 2020
 
-// Hook UITableView
-%hook UITableView
+// Create a new class so code can be ran in Swift
+@interface AETableView : UITableView
+-(void)setSeparatorStyle:(long long)arg1;
+@end
+
+// Hook our new class
+%hook AETableView
 -(void)setSeparatorStyle:(long long)arg1 {
     // Run original code, but overwrite arg1
     %orig(0);
@@ -20,5 +25,8 @@
     // If the process is SpringBoard, don't load the tweak
     if ([processName isEqualToString:@"SpringBoard"]) {
         return;
+    // If it isn't, replace UITableView with our class
+    } else {
+        %init(AETableView=objc_getClass("UITableView"));
     }
 }

@@ -22,11 +22,8 @@
 
     // Get current application/process
     NSString *processName = [NSProcessInfo processInfo].processName;
-    // If the process is SpringBoard, don't load the tweak
-    if ([processName isEqualToString:@"SpringBoard"]) {
-        return;
-    // If it isn't, replace UITableView with our class
-    } else {
+    // If the process isn't SpringBoard, replace UITableView with our new class
+    if (![processName isEqualToString:@"SpringBoard"]) {
         %init(AETableView=objc_getClass("UITableView"));
     }
 }

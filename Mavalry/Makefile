@@ -1,3 +1,5 @@
+export ARCHS = arm64 arm64e
+
 include $(THEOS)/makefiles/common.mk
 
 SUBPROJECTS += Tweak Preferences

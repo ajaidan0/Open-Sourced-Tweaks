@@ -1,13 +1,18 @@
-// ReachOptions
-// Copyright (c) ajaidan0 2020
+/*
+ * ReachOptions : ReachOptions.x
+ *
+ * Copyright (c) ajaidan0 2020 (https://github.com/ajaidan0)
+*/
 
 #import "ReachOptions.h"
 #import "UIDevice+notchedDevice.h"
 
 %hook SBReachabilityManager
 -(void)_setKeepAliveTimer {
-    // This is to disable the timer on reachability.
-    // I did this because sometimes the menu would dismiss (much like reachability) without any notice.
+    /* 
+     * This is to disable the timer on reachability.
+     * I did this because sometimes the menu would dismiss (much like reachability) without any notice.
+    */
     if (!isEnabled) {
         %orig;
     }

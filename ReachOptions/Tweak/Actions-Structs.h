@@ -1,3 +1,9 @@
+/*
+ * ReachOptions : Actions-Structs.h
+ *
+ * Copyright (c) ajaidan0 2020 (https://github.com/ajaidan0)
+*/
+
 #import <Foundation/Foundation.h>
 #include <unistd.h>
 #include <spawn.h>

@@ -1,5 +1,8 @@
-// Aeolus
-// Copyright (c) ajaidan0 2020
+/*
+ * Aeolus : Aeolus.xm
+ *
+ * Copyright (c) ajaidan0 2020 (https://github.com/ajaidan0)
+*/
 
 // Create a new class so code can be ran in Swift
 @interface AETableView : UITableView
@@ -16,8 +19,8 @@
 
 %ctor {
     /* 
-        * Credits to Nepeta for process exclusion code
-        * I do this because on some devices, there is a crash when you use 3D touch on a notification with this tweak installed.
+     * Credits to Nepeta for process exclusion code
+     * I do this because on some devices, there is a crash when you use 3D touch on a notification with this tweak installed.
     */
 
     // Get current application/process

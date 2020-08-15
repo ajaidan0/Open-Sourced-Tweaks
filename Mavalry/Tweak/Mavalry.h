@@ -1,5 +1,8 @@
-// Mavalry
-// Copyright (c) ajaidan0 2020
+/*
+ * Mavalry : Mavalry.h
+ *
+ * Copyright (c) ajaidan0 2020 (https://github.com/ajaidan0)
+*/
 
 #import <UIKit/UIControl.h>
 #import <Cephei/HBPreferences.h>

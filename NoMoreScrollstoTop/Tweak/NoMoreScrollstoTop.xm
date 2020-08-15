@@ -1,5 +1,8 @@
-// NoMoreScrollstoTop v-1.1.1
-// Copyright (c) ajaidan0 2020
+/*
+ * NoMoreScrollstoTop : NoMoreScrollstoTop.xm
+ *
+ * Copyright (c) ajaidan0 2020 (https://github.com/ajaidan0)
+*/
 
 #import <Cephei/HBPreferences.h>
 #import <SparkAppList.h>

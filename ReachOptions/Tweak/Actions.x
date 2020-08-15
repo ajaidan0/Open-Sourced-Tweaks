@@ -1,5 +1,8 @@
-// ReachOptions
-// Copyright (c) ajaidan0
+/*
+ * ReachOptions : Actions.x
+ *
+ * Copyright (c) ajaidan0 2020 (https://github.com/ajaidan0)
+*/
 
 #import "Actions-Structs.h"
 

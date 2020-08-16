@@ -1,5 +1,3 @@
-TARGET = iphone:clang::13.4
-
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = Mavalry

@@ -1,32 +1,43 @@
-#import <Foundation/Foundation.h>
+#import <Preferences/PSListController.h>
+#import <Preferences/PSSpecifier.h>
 #import <Preferences/PSSwitchTableCell.h>
-#import "MAVBaseController.h"
+#import <CepheiPrefs/HBRootListController.h>
+#import <CepheiPrefs/HBAppearanceSettings.h>
+#import <Cephei/HBRespringController.h>
+#import <Cephei/HBPreferences.h>
+#import <AudioToolbox/AudioServices.h>
 
-@interface MAVSwitchCell : PSSwitchTableCell
--(UIColor *)colorFromHex:(NSString *)hex withAlpha:(CGFloat)alpha;
+@interface MAVAppearanceSettings : HBAppearanceSettings {    
+}
 @end
 
-@interface MAVRootListController : MAVBaseController
+@interface MAVRootListController : HBRootListController
 @property(nonatomic, retain) UIBarButtonItem *respringApplyButton;
 @end
 
-@interface Creds : MAVBaseController
+@interface Creds : HBRootListController {
+}
 @end
 
-@interface SB : MAVBaseController
+@interface SB : HBRootListController {
+}
 @end
 
-@interface Lockscreen : MAVBaseController 
+@interface Lockscreen : HBRootListController {
+}
+@end
+@interface Applications : HBRootListController {
+}
 @end
 
-@interface Applications : MAVBaseController
+@interface Reddit : HBRootListController {
+}
 @end
 
-@interface Reddit : MAVBaseController
+@interface Haptics : HBRootListController {
+}
 @end
 
-@interface Haptics : MAVBaseController
-@end
-
-@interface Reachability : MAVBaseController
+@interface Reachability : HBRootListController {
+}
 @end

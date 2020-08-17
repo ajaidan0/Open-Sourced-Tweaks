@@ -55,10 +55,6 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 	return _specifiers;
 }
 
--(void)respring {
-	[HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=Mavalry"]];
-}
-
 -(void)viewDidLoad {
 	[super viewDidLoad];
 	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
@@ -74,10 +70,6 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 		_specifiers = [self loadSpecifiersFromPlistName:@"Lockscreen" target:self];
 	}
 	return _specifiers;
-}
-
--(void)respring {
-	[HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=Mavalry"]];
 }
 
 -(void)viewDidLoad {
@@ -97,10 +89,6 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 	return _specifiers;
 }
 
--(void)respring {
-	[HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=Mavalry"]];
-}
-
 -(void)viewDidLoad {
 	[super viewDidLoad];
 	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
@@ -116,10 +104,6 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 		_specifiers = [self loadSpecifiersFromPlistName:@"Reddit" target:self];
 	}
 	return _specifiers;
-}
-
--(void)respring {
-	[HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=Mavalry"]];
 }
 
 -(void)viewDidLoad {
@@ -139,10 +123,6 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 	return _specifiers;
 }
 
--(void)respring {
-	[HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=Mavalry"]];
-}
-
 -(void)viewDidLoad {
 	[super viewDidLoad];
 	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
@@ -160,10 +140,6 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 	return _specifiers;
 }
 
--(void)respring {
-	[HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=Mavalry"]];
-}
-
 -(void)viewDidLoad {
 	[super viewDidLoad];
 	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
@@ -179,10 +155,6 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 		_specifiers = [self loadSpecifiersFromPlistName:@"Creds" target:self];
 	}
 	return _specifiers;
-}
-
--(void)respring {
-	[HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=Mavalry"]];
 }
 
 -(void)viewDidLoad {
@@ -233,50 +205,10 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 	return self;
 }
 
-// All credits to Simalary (Chris) and GalacticDev
-
--(void)setupWelcomeController {
-	welcomeController = [[OBWelcomeController alloc] initWithTitle:@"Mavalry" detailText:@"The ultimate iOS customization tweak." icon:[UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/mavalryprefs.bundle/icon.png"]];
-
-	[welcomeController addBulletedListItemWithTitle:@"Simple" description:@"Made with simplicity in mind." image:[UIImage systemImageNamed:@"gear"]];
-	[welcomeController addBulletedListItemWithTitle:@"Elegant" description:@"Built to fullfill its purpose easily." image:[UIImage systemImageNamed:@"gear"]];
-	[welcomeController addBulletedListItemWithTitle:@"Optimized" description:@"Extensively tested for battery drain." image:[UIImage systemImageNamed:@"gear"]];
-	[welcomeController.buttonTray addCaptionText:@"Made with ❤️ by ajaidan0."];
-
-	OBBoldTrayButton* continueButton = [OBBoldTrayButton buttonWithType:1];
-	[continueButton addTarget:self action:@selector(dismissWelcomeController) forControlEvents:UIControlEventTouchUpInside];
-	[continueButton setTitle:@"Continue" forState:UIControlStateNormal];
-	[continueButton setClipsToBounds:YES];
-	[continueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal]; 
-	[continueButton.layer setCornerRadius:15]; 
-	[welcomeController.buttonTray addButton:continueButton];
-
-	welcomeController.modalPresentationStyle = UIModalPresentationPageSheet; 
-	welcomeController.modalInPresentation = YES; 
-	welcomeController.view.tintColor = [UIColor colorWithRed: 0.57 green: 0.22 blue: 0.85 alpha: 1.00];
-	[self presentViewController:welcomeController animated:YES completion:nil]; 
-}
-
 -(void)viewDidLoad {
 	[super viewDidLoad];
 	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
     self.hb_appearanceSettings = appearanceSettings;
-	NSString *path = @"/var/mobile/Library/Preferences/com.ajaidan.mavalryprefs.plist";
-	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
-	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
-	NSNumber *didShowOBWelcomeController = [settings valueForKey:@"didShowOBWelcomeController"] ?: @0;
-	if([didShowOBWelcomeController isEqual:@0]){
-		[self setupWelcomeController];
-	}
 }
 
--(void)dismissWelcomeController {
-	NSString *path = @"/var/mobile/Library/Preferences/com.ajaidan.mavalryprefs.plist";
-	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
-	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
-	[settings setObject:@1 forKey:@"didShowOBWelcomeController"];
-	[settings writeToFile:path atomically:YES];
-	AudioServicesPlaySystemSound(1520);
-	[welcomeController dismissViewControllerAnimated:YES completion:nil];
-}
 @end

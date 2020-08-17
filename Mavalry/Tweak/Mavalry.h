@@ -5,11 +5,9 @@
 */
 
 #import <UIKit/UIControl.h>
-#import <Cephei/HBPreferences.h>
-#import <sys/utsname.h>
 #import <AudioToolbox/AudioServices.h>
 #import <spawn.h>
-#include <RemoteLog.h>
+#import "Prefs.h"
 
 extern NSString *const kCAFilterDestOut;
 
@@ -33,11 +31,3 @@ extern NSString *const kCAFilterDestOut;
 @interface NCNotificationListSectionRevealHintView : UIView
 @property(nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
 @end
-
-BOOL isEnabled;
-
-// Booleans
-BOOL wantsHomeBar, wantsOlderNotifs, wantsTransparentDock, wantsHiddenPageDots, wantsHiddenLabels, hideFolderBackground, moonGone, noTodayLS, noTodayHS, noSpotlight, wantsHapticVol, wantsHapticScreenshot, reachChevron, reachTimer, wantsBatteryPercentage;
-
-// Floats
-CGFloat hapticPref, volumePref, screenshotPref;

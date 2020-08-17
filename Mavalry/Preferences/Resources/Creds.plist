@@ -42,19 +42,6 @@
 			<key>cellClass</key>
 			<string>HBLinkTableCell</string>
 			<key>label</key>
-			<string>OBWelcomeController:</string>
-			<key>subtitle</key>
-			<string>Simalary (Chris)</string>
-			<key>icon</key>
-			<string>GitHub.png</string>
-			<key>url</key>
-			<string>https://gist.github.com/chrisharper22/17541f484f05542b0ad78a1e334835da</string>
-		</dict>
-
-		<dict>
-			<key>cellClass</key>
-			<string>HBLinkTableCell</string>
-			<key>label</key>
 			<string>Fixing buggy haptics:</string>
 			<key>subtitle</key>
 			<string>Thomz</string>

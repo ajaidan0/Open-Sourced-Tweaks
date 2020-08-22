@@ -10,8 +10,7 @@
 %hook _UIBatteryView
 
 -(void)setShowsPercentage:(BOOL)arg1 {
-	arg1 = TRUE;
-	return %orig(arg1);
+	%orig(TRUE);
 }
 
 %end
@@ -45,11 +44,11 @@
 %hook SBMainDisplayPolicyAggregator
 
 -(BOOL)_allowsCapabilityLockScreenTodayViewWithExplanation:(id*)arg1 {
-    return false;
+    return FALSE;
 }
 
 -(BOOL)_allowsCapabilityTodayViewWithExplanation:(id*)arg1 {
-    return false;
+    return FALSE;
 }
 
 %end
@@ -59,12 +58,12 @@
 %hook SBRootFolderView
 
 -(unsigned long long)_minusPageCount {
-    return false;
+    return FALSE;
 }
 
 -(void)_layoutSubviewsForTodayView {
     %orig;
-    [self todayViewController].view.hidden = false;
+    [self todayViewController].view.hidden = FALSE;
 }
 
 -(void)beginPageStateTransitionToState:(long long)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3  {
@@ -98,8 +97,7 @@
 %group HideLabels
 %hook SBIconView
 - (void)setLabelHidden:(BOOL)arg1 {
-	arg1 = YES;
-	%orig(arg1);
+	%orig(TRUE);
 }
 %end
 %end
@@ -108,7 +106,7 @@
 %hook SBIconListPageControl
 
 - (void)setHidden:(BOOL)arg1 {
-    %orig(YES);
+    %orig(TRUE);
 }
 
 %end
@@ -117,8 +115,7 @@
 %group DockBG
 %hook SBDockView
 - (void)setBackgroundAlpha:(double)arg1 {
-	arg1 = 0;
-	%orig(arg1);
+	%orig(0);
 }
 
 %end
@@ -126,8 +123,7 @@
 %hook SBFloatingDockView
 
 - (void)setBackgroundAlpha:(double)arg1 {
-	arg1 = 0;
-	%orig(arg1);
+	%orig(0);
 }
 
 %end
@@ -148,7 +144,7 @@
 %group OlderNotifs
 %hook NCNotificationListSectionRevealHintView
 -(void)setFrame:(CGRect)arg1 {
-	self.hidden = YES;
+	self.hidden = TRUE;
 	%orig;
 }
 %end

@@ -9,6 +9,13 @@ git add .
 
 echo "Please put your commit message below"
 read -p ">>> " MESSAGE
-NEWMESSAGE="$(echo $MESSAGE)"
-git commit -m "$NEWMESSAGE"
-git push
+
+if [[ $MESSAGE == "exit()" ]]; then {
+    echo -e "Script was told to exit."
+    exit;
+} else {
+    NEWMESSAGE="$(echo $MESSAGE)"
+    git commit -m "$NEWMESSAGE"
+    git push
+}
+fi

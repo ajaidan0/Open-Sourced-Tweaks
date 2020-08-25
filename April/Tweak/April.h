@@ -8,6 +8,17 @@
 #import "Extensions/UIView+ParentVC.h"
 #import "Extensions/NSString+HexString.h"
 
+#ifdef __cplusplus /* If this is a C++ compiler, use C linkage */
+extern "C" {
+#endif
+UIColor *LCPParseColorString(NSString *colorStringFromPrefs, NSString *colorStringFallback);
+//old DONT USE
+UIColor *colorFromDefaultsWithKey(NSString *defaults, NSString *key, NSString *fallback);
+
+#ifdef __cplusplus /* If this is a C++ compiler, end C linkage */
+}
+#endif
+
 extern CFArrayRef CPBitmapCreateImagesFromData(CFDataRef cpbitmap, void*, int, void*);
 
 // Preference Variables
@@ -76,16 +87,77 @@ static NSInteger aprilPreferredLanguage;
 // Music
 static BOOL aprilHideWhenPlaying;
 
+// Variable Interfaces
+@interface SBFLockScreenDateSubtitleView : UIView
+@end
+
+@interface SBFLockScreenDateView : UIView
+@property (assign,getter=isSubtitleHidden,nonatomic) BOOL subtitleHidden;
+@property (nonatomic, readonly) long long _keyboardOrientation;
+@property (nonatomic, retain) NSDate *date;
+-(void)setCustomSubtitleView:(SBFLockScreenDateSubtitleView *)arg1;
+-(id)_timeLabel;
+
+// April
+@property (retain) UIStackView *aprilStackView;
+@property (retain) UIStackView *weatherStackView;
+@property (retain) UIImageView *weatherConditionImage;
+@property (retain) UIView      *fillerView;
+@property (retain) UILabel     *timeLabel;
+@property (retain) UILabel     *dateLabel;
+@property (retain) UILabel     *weatherLabel;
+@property (retain) UIStackView *eventStackView;
+@property (retain) UILabel     *eventTitle;
+@property (retain) UILabel     *eventDetails;
+-(void)setupApril;
+-(void)updateEventsLabel;
+-(void)updateClockAndDateLabel;
+-(void)updateWeatherLabel;
+-(void)updateWeatherForCity;
+-(void)batteryStateChanged:(NSNotification *)notification;
+-(void)alignmentWithGesture:(UITapGestureRecognizer *)gesture;
+-(void)setAlignment:(int)alignment;
+-(void)switchViewPositions:(UITapGestureRecognizer *)gesture;
+-(void)fadeOutAprilWithDuration:(float)duration withDelay:(float)delay;
+-(void)fadeInAprilWithDuration:(float)duration withDelay:(float)delay;
+-(void)fadeOutOthersWithDuration:(float)duration withDelay:(float)delay;
+-(void)fadeInOthersWithDuration:(float)duration withDelay:(float)delay;
+-(void)spacingWithOffset:(UIScrollView*)offset;
+-(void)preferencesChanged;
+@end
+
 // Variables
-static SBPagedScrollView *pagedScrollView;
 static SBFLockScreenDateView *lockScreenDateView;
-static SBUIProudLockIconView *proudLockIconView;
 static UITapGestureRecognizer *lockScreenDateViewGesture;
 static UIColor *lockColor;
 static CGRect lsFrame;
 static UIView *touchView;
 static BOOL addedView;
 static BOOL shouldRealignViews;
+
+// Function Interfaces
+@interface MPArtworkColorAnalyzer : NSObject
+@property (nonatomic,readonly) long long algorithm;
+@property (nonatomic,readonly) UIImage *image;
+-(id)initWithImage:(id)arg1 algorithm:(long long)arg2;
+-(void)analyzeWithCompletionHandler:(/*^block*/id)arg1;
+-(id)_fallbackColorAnalysis;
+@end
+
+@interface MPArtworkColorAnalysis
+@property (nonatomic,readonly) UIColor *backgroundColor;
+@property (getter=isBackgroundColorLight,nonatomic,readonly) BOOL backgroundColorLight;
+@property (nonatomic,readonly) UIColor *primaryTextColor;
+@property (getter=isPrimaryTextColorLight,nonatomic,readonly) BOOL primaryTextColorLight;
+@property (nonatomic,readonly) UIColor *secondaryTextColor;
+@property (getter=isSecondaryTextColorLight,nonatomic,readonly) BOOL secondaryTextColorLight;
+-(UIColor*)backgroundColor;
+-(BOOL)isBackgroundColorLight;
+-(UIColor*)primaryTextColor;
+-(BOOL)isPrimaryTextColorLight;
+-(UIColor*)secondaryTextColor;
+-(BOOL)isSecondaryTextColorLight;
+@end
 
 static void aprilUseWallpaperColors() {
   NSData *lockData = [NSData dataWithContentsOfFile:@"/User/Library/SpringBoard/OriginalLockBackground.cpbitmap"];
@@ -193,9 +265,6 @@ void loadPrefs() {
 @interface SBUILegibilityLabel : UIView
 @end
 
-@interface SBFLockScreenDateSubtitleView : UIView
-@end
-
 @interface CSCoverSheetViewBase : UIView
 @end
 
@@ -206,41 +275,6 @@ void loadPrefs() {
 @end
 
 @interface CSCoverSheetViewController : UIViewController
-@end
-
-@interface SBFLockScreenDateView : UIView
-@property (assign,getter=isSubtitleHidden,nonatomic) BOOL subtitleHidden;
-@property (nonatomic, readonly) long long _keyboardOrientation;
-@property (nonatomic, retain) NSDate *date;
--(void)setCustomSubtitleView:(SBFLockScreenDateSubtitleView *)arg1;
--(id)_timeLabel;
-
-// April
-@property (retain) UIStackView *aprilStackView;
-@property (retain) UIStackView *weatherStackView;
-@property (retain) UIImageView *weatherConditionImage;
-@property (retain) UIView      *fillerView;
-@property (retain) UILabel     *timeLabel;
-@property (retain) UILabel     *dateLabel;
-@property (retain) UILabel     *weatherLabel;
-@property (retain) UIStackView *eventStackView;
-@property (retain) UILabel     *eventTitle;
-@property (retain) UILabel     *eventDetails;
--(void)setupApril;
--(void)updateEventsLabel;
--(void)updateClockAndDateLabel;
--(void)updateWeatherLabel;
--(void)updateWeatherForCity;
--(void)batteryStateChanged:(NSNotification *)notification;
--(void)alignmentWithGesture:(UITapGestureRecognizer *)gesture;
--(void)setAlignment:(int)alignment;
--(void)switchViewPositions:(UITapGestureRecognizer *)gesture;
--(void)fadeOutAprilWithDuration:(float)duration withDelay:(float)delay;
--(void)fadeInAprilWithDuration:(float)duration withDelay:(float)delay;
--(void)fadeOutOthersWithDuration:(float)duration withDelay:(float)delay;
--(void)fadeInOthersWithDuration:(float)duration withDelay:(float)delay;
--(void)spacingWithOffset:(UIScrollView*)offset;
--(void)preferencesChanged;
 @end
 
 @interface SBPagedScrollView : UIScrollView
@@ -259,28 +293,43 @@ void loadPrefs() {
 -(void)setContentColor:(UIColor*)arg1;
 @end
 
-@interface MPArtworkColorAnalyzer : NSObject
-@property (nonatomic,readonly) long long algorithm;
-@property (nonatomic,readonly) UIImage *image;
--(id)initWithImage:(id)arg1 algorithm:(long long)arg2;
--(void)analyzeWithCompletionHandler:(/*^block*/id)arg1;
--(id)_fallbackColorAnalysis;
+@interface UIColor (PFColor)
++ (UIColor *)PF_colorWithHex:(NSString *)hexString;
++ (NSString *)hexFromColor:(UIColor *)color;
+@property (nonatomic, assign, readonly) CGFloat alpha;
+@property (nonatomic, assign, readonly) CGFloat red;
+@property (nonatomic, assign, readonly) CGFloat green;
+@property (nonatomic, assign, readonly) CGFloat blue;
+@property (nonatomic, assign, readonly) CGFloat hue;
+@property (nonatomic, assign, readonly) CGFloat saturation;
+@property (nonatomic, assign, readonly) CGFloat brightness;
+- (UIColor *)desaturate:(CGFloat)percent;
+- (UIColor *)lighten:(CGFloat)percent;
+- (UIColor *)darken:(CGFloat)percent;
 @end
 
-@interface MPArtworkColorAnalysis
-@property (nonatomic,readonly) UIColor *backgroundColor;
-@property (getter=isBackgroundColorLight,nonatomic,readonly) BOOL backgroundColorLight;
-@property (nonatomic,readonly) UIColor *primaryTextColor;
-@property (getter=isPrimaryTextColorLight,nonatomic,readonly) BOOL primaryTextColorLight;
-@property (nonatomic,readonly) UIColor *secondaryTextColor;
-@property (getter=isSecondaryTextColorLight,nonatomic,readonly) BOOL secondaryTextColorLight;
--(UIColor*)backgroundColor;
--(BOOL)isBackgroundColorLight;
--(UIColor*)primaryTextColor;
--(BOOL)isPrimaryTextColorLight;
--(UIColor*)secondaryTextColor;
--(BOOL)isSecondaryTextColorLight;
+@interface PFColorAlert : NSObject
+// DO NOT USE OLD METHOD
+//- (void)showWithStartColor:(UIColor *)startColor showAlpha:(BOOL)showAlpha completion:(void (^)(UIColor *pickedColor))completionBlock;
++ (PFColorAlert *)colorAlertWithStartColor:(UIColor *)startColor showAlpha:(BOOL)showAlpha;
+- (PFColorAlert *)initWithStartColor:(UIColor *)startColor showAlpha:(BOOL)showAlpha;
+- (void)displayWithCompletion:(void (^)(UIColor *pickedColor))fcompletionBlock;
+- (void)close;
 @end
+
+@interface PFLiteColorCell : UITableViewCell
+- (id)initWithStyle:(long long)style reuseIdentifier:(id)identifier specifier:(id)specifier;
+- (UIColor *)previewColor; // this will be used for the circle preview view. override in a subclass
+- (id)specifier;
+- (void)updateCellDisplay;
+@end
+
+@interface PFSimpleLiteColorCell : PFLiteColorCell
+@end
+
+// Redefine Vars from interfaces
+static SBPagedScrollView *pagedScrollView;
+static SBUIProudLockIconView *proudLockIconView;
 
 // Force allow content hugging priority
 @interface UILabel (April)

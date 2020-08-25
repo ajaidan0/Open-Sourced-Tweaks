@@ -103,7 +103,7 @@
     if((self._keyboardOrientation == 3 || self._keyboardOrientation == 4)) {
       if(self.currentPageIndex == 0) {
         [lockScreenDateView fadeOutOthersWithDuration:0.3 withDelay:0];
-        [lockScreenDateView setAlignment:0];
+        [lockScreenDateView setAlignment:2];
       } else {
         [lockScreenDateView fadeInOthersWithDuration:0.3 withDelay:0];
         if([[[UIDevice currentDevice] model] isEqualToString:@"iPad"])
@@ -113,7 +113,7 @@
     } else {
       if(self.currentPageIndex == 0) {
         [lockScreenDateView fadeOutOthersWithDuration:0.3 withDelay:0];
-        [lockScreenDateView setAlignment:2];
+        [lockScreenDateView setAlignment:0];
       } else {
         [lockScreenDateView fadeInOthersWithDuration:0.3 withDelay:0];
         [lockScreenDateView setAlignment:(int)aprilAlignment];

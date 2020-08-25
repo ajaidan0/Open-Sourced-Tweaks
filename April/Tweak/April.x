@@ -712,13 +712,12 @@
 
 %ctor {
   loadPrefs();
+  %init(All);
   if(@available(iOS 13, *)) {
     %init(iOS13);
   } else {
     %init(iOS12);
   }
-
-  %init(All);
   if(aprilAlwaysUseWallpaper)
     aprilUseWallpaperColors();
 }

@@ -1,3 +1,10 @@
+/*
+ * April : APRTitleCells.m
+ * 
+ * Authored by ConstanzeDev and LacertosusDeus (c) 2020 
+ * Maintained by ajaidan0 (c) 2020
+*/
+
 #import "APRTitleCells.h"
 #import "Common.h"
 #import <Preferences/PSSpecifier.h>

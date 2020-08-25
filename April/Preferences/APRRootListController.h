@@ -1,4 +1,10 @@
-#import "APRSetupController.h"
+/*
+ * April : APRRootListController.h
+ * 
+ * Authored by ConstanzeDev and LacertosusDeus (c) 2020 
+ * Maintained by ajaidan0 (c) 2020
+*/
+
 #import "NSTask.h"
 #import <Preferences/PSListController.h>
 #import <Preferences/PSTableCell.h>

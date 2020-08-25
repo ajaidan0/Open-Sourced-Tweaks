@@ -1,8 +1,14 @@
+/*
+ * April : April.h
+ * 
+ * Authored by ConstanzeDev and LacertosusDeus (c) 2020 
+ * Maintained by ajaidan0 (c) 2020
+*/
+
 // Imports
 #import <Cephei/HBPreferences.h>
 #import <CoreText/CoreText.h>
 #import <EventKit/EventKit.h>
-#import <PeterDev/libpddokdo.h>
 #define LD_DEBUG NO
 #import "APRSetupController.h"
 #import "Extensions/UIView+ParentVC.h"
@@ -143,6 +149,15 @@ static BOOL shouldRealignViews;
 -(void)analyzeWithCompletionHandler:(/*^block*/id)arg1;
 -(id)_fallbackColorAnalysis;
 @end
+
+@interface WATodayPadView
+-(NSString *)locationName;
+-(UIImage *)conditionsImage;
+-(NSString *)conditionsLine;
+-(NSString *)temperature;
+@end
+
+static WATodayPadView *weatherPadView;
 
 @interface MPArtworkColorAnalysis
 @property (nonatomic,readonly) UIColor *backgroundColor;

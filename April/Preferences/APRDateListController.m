@@ -1,3 +1,10 @@
+/*
+ * April : APRDateListController.m
+ * 
+ * Authored by ConstanzeDev and LacertosusDeus (c) 2020 
+ * Maintained by ajaidan0 (c) 2020
+*/
+
 #import "APRRootListController.h"
 
 @implementation APRDateListController

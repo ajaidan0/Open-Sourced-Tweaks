@@ -1,3 +1,10 @@
+/*
+ * April : APRTitleCells.h
+ * 
+ * Authored by ConstanzeDev and LacertosusDeus (c) 2020 
+ * Maintained by ajaidan0 (c) 2020
+*/
+
 #import <Preferences/PSListController.h>
 #import <Preferences/PSTableCell.h>
 #import <Preferences/PSSpecifier.h>

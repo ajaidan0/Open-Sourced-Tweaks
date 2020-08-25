@@ -1,10 +1,9 @@
 /*
- * April.x
- * April
+ * April : April.x
  * 
- * Constanze (c) 2020 
- * Julius Nieves (c) 2020 
- */
+ * Authored by ConstanzeDev and LacertosusDeus (c) 2020 
+ * Maintained by ajaidan0 (c) 2020
+*/
 
 #import "April.h"
 
@@ -175,6 +174,12 @@
 %end
 
 %group All
+
+%hook WATodayPadView
+-(id)init {
+  return weatherPadView = %orig;
+}
+%end
 
 %hook SBFLockScreenDateView
   -(void)layoutSubviews {
@@ -469,21 +474,17 @@
     [dateFormatter setCalendar:[NSCalendar calendarWithIdentifier:aprilDateLabelCalendar]];
     if(![aprilTimeZone isEqualToString:@""])
       dateFormatter.timeZone = [NSTimeZone timeZoneWithName:aprilTimeZone];
-    [[PDDokdo sharedInstance] refreshWeatherData];
     if(self.weatherLabel && aprilWeatherLabelSwitch) {
-      NSDictionary *weatherData = [[PDDokdo sharedInstance] weatherData];
-      self.weatherLabel.text = [aprilWeatherLabelFormat stringByReplacingOccurrencesOfString:@"DG" withString:[weatherData objectForKey:@"temperature"]];
-      self.weatherLabel.text = [self.weatherLabel.text stringByReplacingOccurrencesOfString:@"CND" withString:[weatherData objectForKey:@"conditions"]];
-      self.weatherLabel.text = [self.weatherLabel.text stringByReplacingOccurrencesOfString:@"LLLL" withString:[weatherData objectForKey:@"location"]];
-      self.weatherLabel.text = [self.weatherLabel.text stringByReplacingOccurrencesOfString:@"SRT" withString:[dateFormatter stringFromDate:[weatherData objectForKey:@"sunrise"]]];
-      self.weatherLabel.text = [self.weatherLabel.text stringByReplacingOccurrencesOfString:@"SST" withString:[dateFormatter stringFromDate:[weatherData objectForKey:@"sunset"]]];
+      self.weatherLabel.text = [aprilWeatherLabelFormat stringByReplacingOccurrencesOfString:@"DG" withString:[weatherPadView temperature]];
+      self.weatherLabel.text = [self.weatherLabel.text stringByReplacingOccurrencesOfString:@"CND" withString:[weatherPadView conditionsLine]];
+      self.weatherLabel.text = [self.weatherLabel.text stringByReplacingOccurrencesOfString:@"LLLL" withString:[weatherPadView locationName]];
 
       if(aprilWeatherLabelLowercase) {
         self.weatherLabel.text = [self.weatherLabel.text lowercaseString];
       }
 
       if(aprilWeatherUseConditionImages) {
-        UIImage *ogi = [weatherData objectForKey:@"conditionsImage"];
+        UIImage *ogi = [weatherPadView conditionsImage];
         self.weatherConditionImage.image = [UIImage imageWithCGImage:[ogi CGImage]
                                                     scale:(ogi.scale * 1.5)
                                                     orientation:(ogi.imageOrientation)];

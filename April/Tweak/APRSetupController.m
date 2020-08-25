@@ -1,3 +1,10 @@
+/*
+ * April : APRSetupController.m
+ * 
+ * Authored by ConstanzeDev and LacertosusDeus (c) 2020 
+ * Maintained by ajaidan0 (c) 2020
+*/
+
 #import "APRSetupController.h"
 
 @implementation APRSetupController

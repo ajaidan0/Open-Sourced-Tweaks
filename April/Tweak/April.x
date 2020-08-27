@@ -476,8 +476,8 @@
       dateFormatter.timeZone = [NSTimeZone timeZoneWithName:aprilTimeZone];
     if(self.weatherLabel && aprilWeatherLabelSwitch) {
       self.weatherLabel.text = [aprilWeatherLabelFormat stringByReplacingOccurrencesOfString:@"DG" withString:[weatherPadView temperature]];
-      self.weatherLabel.text = [self.weatherLabel.text stringByReplacingOccurrencesOfString:@"CND" withString:[weatherPadView conditionsLine]];
-      self.weatherLabel.text = [self.weatherLabel.text stringByReplacingOccurrencesOfString:@"LLLL" withString:[weatherPadView locationName]];
+      self.weatherLabel.text = [aprilWeatherLabelFormat stringByReplacingOccurrencesOfString:@"CND" withString:[weatherPadView conditionsLine]];
+      self.weatherLabel.text = [aprilWeatherLabelFormat stringByReplacingOccurrencesOfString:@"LLLL" withString:[weatherPadView locationName]];
 
       if(aprilWeatherLabelLowercase) {
         self.weatherLabel.text = [self.weatherLabel.text lowercaseString];

@@ -135,7 +135,7 @@
                     [alert addAction:cancel];
                     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
                 }
-            // If the tweak isn't enabled, just open reachability as normal.
+            // If the tweak isn't enabled, just return to the process as normal.
             } else {
                 %orig;
             }

@@ -27,7 +27,7 @@
         UIAlertAction *reach = [UIAlertAction actionWithTitle:@"Access Reachability" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {%orig;}]; // Open Reachability
         UIAlertAction *one = [UIAlertAction actionWithTitle:@"Take a Screenshot" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) Screenshot];}]; // Take screenshot
         UIAlertAction *two = [UIAlertAction actionWithTitle:@"Open Control Center" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) ControlCenter];}]; // Open CC
-        UIAlertAction *three = [UIAlertAction actionWithTitle:@"Lock Device" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) Lock];}]; // Lock device
+        UIAlertAction *three = [UIAlertAction actionWithTitle:@"Lock Device" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {return [%c(ReachOptions) Lock];}]; // Lock device
         UIAlertAction *four = [UIAlertAction actionWithTitle:@"Respring" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) Respring];}]; // Respring device
         UIAlertAction *five = [UIAlertAction actionWithTitle:@"UICache" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) UICache];}]; // UICache device
         UIAlertAction *six = [UIAlertAction actionWithTitle:@"Enable/Disable WiFi" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) WiFi];}]; // Enable/Disable WiFi
@@ -80,7 +80,7 @@
         UIAlertAction *reach = [UIAlertAction actionWithTitle:@"Access Reachability" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {%orig;}]; // Open Reachability
         UIAlertAction *one = [UIAlertAction actionWithTitle:@"Take a Screenshot" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) Screenshot];}]; // Take screenshot
         UIAlertAction *two = [UIAlertAction actionWithTitle:@"Open Control Center" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) ControlCenter];}]; // Open CC
-        UIAlertAction *three = [UIAlertAction actionWithTitle:@"Lock Device" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) Lock];}]; // Lock device
+        UIAlertAction *three = [UIAlertAction actionWithTitle:@"Lock Device" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {return [%c(ReachOptions) Lock];}]; // Lock device
         UIAlertAction *four = [UIAlertAction actionWithTitle:@"Respring" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) Respring];}]; // Respring device
         UIAlertAction *five = [UIAlertAction actionWithTitle:@"UICache" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) UICache];}]; // UICache device
         UIAlertAction *six = [UIAlertAction actionWithTitle:@"Enable/Disable WiFi" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) WiFi];}]; // Enable/Disable WiFi
@@ -151,7 +151,7 @@
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Pick an action." message:nil preferredStyle:UIAlertControllerStyleActionSheet];
                 UIAlertAction *one = [UIAlertAction actionWithTitle:@"Take a Screenshot" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) Screenshot];}]; // Take screenshot
                 UIAlertAction *two = [UIAlertAction actionWithTitle:@"Open Control Center" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) ControlCenter];}]; // Open CC
-                UIAlertAction *three = [UIAlertAction actionWithTitle:@"Lock Device" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) Lock];}]; // Lock device
+                UIAlertAction *three = [UIAlertAction actionWithTitle:@"Lock Device" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {return [%c(ReachOptions) Lock];}]; // Lock device
                 UIAlertAction *four = [UIAlertAction actionWithTitle:@"Respring" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) Respring];}]; // Respring device
                 UIAlertAction *five = [UIAlertAction actionWithTitle:@"UICache" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) UICache];}]; // UICache device
                 UIAlertAction *six = [UIAlertAction actionWithTitle:@"Enable/Disable WiFi" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {[%c(ReachOptions) WiFi];}]; // Enable/Disable WiFi

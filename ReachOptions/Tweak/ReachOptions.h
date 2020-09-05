@@ -10,6 +10,7 @@
 
 @interface SBReachabilityManager : UIAlertController
 -(void)_setKeepAliveTimer;
+-(void)toggleReachability;
 -(void)activateReachability:(id)arg1;
 @end
 

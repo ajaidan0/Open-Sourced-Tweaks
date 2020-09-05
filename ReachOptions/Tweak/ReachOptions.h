@@ -6,6 +6,12 @@
 
 #import <Cephei/HBPreferences.h>
 #import "Actions-Structs.h"
+#import "UIDevice+notchedDevice.h"
+
+@interface SBReachabilityManager : UIAlertController
+-(void)_setKeepAliveTimer;
+-(void)activateReachability:(id)arg1;
+@end
 
 BOOL isEnabled;
 BOOL ss;
@@ -15,4 +21,4 @@ BOOL respring;
 BOOL uicache;
 BOOL wifi;
 BOOL spotlight;
-BOOL shouldCancel;
+BOOL shouldCancel = FALSE;

@@ -5,9 +5,9 @@
 */
 
 #import "ReachOptions.h"
-#import "UIDevice+notchedDevice.h"
 
 %hook SBReachabilityManager
+
 -(void)_setKeepAliveTimer {
     /* 
      * This is to disable the timer on reachability.

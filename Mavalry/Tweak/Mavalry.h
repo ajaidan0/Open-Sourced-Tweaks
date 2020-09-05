@@ -13,20 +13,7 @@
 extern NSString *const kCAFilterDestOut;
 
 @interface SBRootFolderView : UIView
-
 - (UIViewController *)todayViewController;
-
-@end
-
-@interface CCUIBaseSliderView : UIView
-@property(nonatomic, retain) UILabel *percentLabel;
-- (float)value;
-@end
-
-@interface CALayer (Private)
-@property(nonatomic, retain) NSString *compositingFilter;
-@property(nonatomic, assign) BOOL allowsGroupOpacity;
-@property(nonatomic, assign) BOOL allowsGroupBlending;
 @end
 
 @interface NCNotificationListSectionRevealHintView : UIView

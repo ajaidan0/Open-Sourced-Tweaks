@@ -4,13 +4,6 @@
  * Copyright (c) ajaidan0 2020 (https://github.com/ajaidan0)
 */
 
-#import <Cephei/HBPreferences.h>
-#import <SparkAppList.h>
-#import <UIKit/UIKit.h>
-
-BOOL isEnabled;
-BOOL shouldDisableScrollstoTop = FALSE;
-
 %group Tweak
 %hook UIScrollView
 
@@ -32,8 +25,6 @@ BOOL shouldDisableScrollstoTop = FALSE;
 %ctor {
 	HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.ajaidan.scrollsprefs"];
 	[preferences registerBool:&isEnabled default:FALSE forKey:@"isEnabled"];
-
-    // Thanks, SparkDev!
 
 	NSString* bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
 

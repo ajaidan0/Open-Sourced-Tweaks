@@ -25,6 +25,7 @@
   }
   return %orig;
 }
+
 %end
 
 %hook SBDashBoardViewBase

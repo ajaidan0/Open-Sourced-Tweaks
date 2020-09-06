@@ -17,8 +17,8 @@
 %ctor {
     // Get current application/process
     NSString *processName = [[%c(NSBundle) mainBundle] bundleIdentifier];
-    // If the process isn't SpringBoard, replace UITableView with our new class
-    if (![processName isEqualToString:@"com.apple.SpringBoard"]) {
+    // If the process isn't SpringBoard, run our code
+    if (![processName isEqualToString:@"com.apple.springboard"]) {
         %init(Tweak);
     }
 }

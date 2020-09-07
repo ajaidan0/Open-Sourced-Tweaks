@@ -13,55 +13,36 @@
 		</dict>
 
         <dict>
-			<key>cellClass</key>
-			<string>HBLinkTableCell</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>Tweak made by:</string>
-			<key>subtitle</key>
-			<string>ajaidan0</string>
+			<string>Tweak made by: ajaidan0</string>
 			<key>icon</key>
 			<string>GitHub.png</string>
-			<key>url</key>
-			<string>https://github.com/ajaidan0</string>
+			<key>action</key>
+			<string>ajaidanLink</string>
 		</dict>
 
-         <dict>
-			<key>cellClass</key>
-			<string>HBLinkTableCell</string>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>Artwork and Volume Haptics:</string>
-			<key>subtitle</key>
-			<string>samoht</string>
+			<string>Artwork and Volume Haptics: samoht</string>
 			<key>icon</key>
 			<string>reddit.png</string>
-			<key>url</key>
-			<string>https://reddit.com/bobbyboys301</string>
+			<key>action</key>
+			<string>samohtLink</string>
 		</dict>
 
-		<dict>
-			<key>cellClass</key>
-			<string>HBLinkTableCell</string>
+        <dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>OBWelcomeController:</string>
-			<key>subtitle</key>
-			<string>Simalary (Chris)</string>
+			<string>Fixing some bugs: Thomz</string>
 			<key>icon</key>
 			<string>GitHub.png</string>
-			<key>url</key>
-			<string>https://gist.github.com/chrisharper22/17541f484f05542b0ad78a1e334835da</string>
-		</dict>
-
-		<dict>
-			<key>cellClass</key>
-			<string>HBLinkTableCell</string>
-			<key>label</key>
-			<string>Fixing buggy haptics:</string>
-			<key>subtitle</key>
-			<string>Thomz</string>
-			<key>icon</key>
-			<string>GitHub.png</string>
-			<key>url</key>
-			<string>https://github.com/thomz07</string>
+			<key>action</key>
+			<string>thomzLink</string>
 		</dict>
 
     </array>

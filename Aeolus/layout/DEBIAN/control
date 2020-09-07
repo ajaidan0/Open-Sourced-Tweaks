@@ -1,6 +1,6 @@
 Package: com.ajaidan.aeolus
 Name: Aeolus
-Version: 1.0
+Version: 1.0.1
 Architecture: iphoneos-arm
 Description: A tweak to remove Table Separators system-wide (without crashes).
 Maintainer: ajaidan0

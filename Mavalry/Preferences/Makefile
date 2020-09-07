@@ -2,11 +2,10 @@ include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = MavalryPrefs
 
-MavalryPrefs_FILES = MAVRootListController.m MAVAppearanceSettings.m
+MavalryPrefs_FILES = MAVRootListController.m
 MavalryPrefs_INSTALL_PATH = /Library/PreferenceBundles
 MavalryPrefs_FRAMEWORKS = UIKit
-MavalryPrefs_PRIVATE_FRAMEWORKS = Preferences OnBoardingKit
-MavalryPrefs_EXTRA_FRAMEWORKS = Cephei CepheiPrefs
+MavalryPrefs_PRIVATE_FRAMEWORKS = Preferences
 MavalryPrefs_CFLAGS = -fobjc-arc
 
 

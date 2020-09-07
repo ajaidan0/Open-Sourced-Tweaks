@@ -1,43 +1,38 @@
 #import <Preferences/PSListController.h>
 #import <Preferences/PSSpecifier.h>
 #import <Preferences/PSSwitchTableCell.h>
-#import <CepheiPrefs/HBRootListController.h>
-#import <CepheiPrefs/HBAppearanceSettings.h>
-#import <Cephei/HBRespringController.h>
-#import <Cephei/HBPreferences.h>
-#import <AudioToolbox/AudioServices.h>
+#import <Foundation/Foundation.h>
+#import <SpringBoard/SpringBoard.h>
+#import <SpringBoardServices/SBSRestartRenderServerAction.h>
+#import <FrontBoardServices/FBSSystemService.h>
 
-@interface MAVAppearanceSettings : HBAppearanceSettings {    
-}
-@end
-
-@interface MAVRootListController : HBRootListController
+@interface MAVRootListController : PSListController
 @property(nonatomic, retain) UIBarButtonItem *respringApplyButton;
 @end
 
-@interface Creds : HBRootListController {
+@interface Creds : PSListController {
 }
 @end
 
-@interface SB : HBRootListController {
+@interface SB : PSListController {
 }
 @end
 
-@interface Lockscreen : HBRootListController {
+@interface Lockscreen : PSListController {
 }
 @end
-@interface Applications : HBRootListController {
-}
-@end
-
-@interface Reddit : HBRootListController {
+@interface Applications : PSListController {
 }
 @end
 
-@interface Haptics : HBRootListController {
+@interface Reddit : PSListController {
 }
 @end
 
-@interface Reachability : HBRootListController {
+@interface Haptics : PSListController {
+}
+@end
+
+@interface Reachability : PSListController {
 }
 @end

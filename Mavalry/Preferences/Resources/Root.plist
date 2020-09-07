@@ -10,7 +10,7 @@
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
-			<true/>
+			<false/>
 			<key>cellClass</key>
   			<string>MAVSwitchCell</string>
   			<key>switchColor</key>
@@ -110,25 +110,25 @@
 		</dict>
 
 		<dict>
-			<key>cellClass</key>
-			<string>HBLinkTableCell</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
 			<key>label</key>
 			<string>Source Code</string>
 			<key>icon</key>
-			<string>GitHub</string>
-			<key>url</key>
-			<string>https://github.com/ajaidan0/open-sourced-tweaks/tree/master/mavalry</string>
+			<string>GitHub.png</string>
+			<key>action</key>
+			<string>sourceLink</string>
 		</dict>
 
 		<dict>
-			<key>cellClass</key>
-			<string>HBLinkTableCell</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
 			<key>label</key>
 			<string>Discord Support Server</string>
 			<key>icon</key>
-			<string>discord</string>
-			<key>url</key>
-			<string>https://discord.gg/4C6E2eQ</string>
+			<string>Discord.png</string>
+			<key>action</key>
+			<string>discordLink</string>
 		</dict>
 
 	</array>

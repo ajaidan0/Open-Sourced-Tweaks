@@ -5,10 +5,10 @@
 */
 
 #import <UIKit/UIControl.h>
-#import <Cephei/HBPreferences.h>
 #import <sys/utsname.h>
 #import <AudioToolbox/AudioServices.h>
 #import <spawn.h>
+#define PLIST_PATH @"/var/mobile/Library/Preferences/com.ajaidan.mavalryprefs.plist"
 
 extern NSString *const kCAFilterDestOut;
 
@@ -28,26 +28,26 @@ BOOL wantsHomeBar, wantsOlderNotifs, wantsTransparentDock, wantsHiddenPageDots, 
 // Floats
 CGFloat hapticPref, volumePref, screenshotPref;
 
-static void prefs() 
+static void loadPrefs()
 {
-    HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.ajaidan.mavalryprefs"];
-	[preferences registerBool:&isEnabled default:NO forKey:@"isEnabled"];
-	[preferences registerBool:&moonGone default:NO forKey:@"moonGone"];
-	[preferences registerBool:&wantsBatteryPercentage default:NO forKey:@"wantsBatteryPercentage"];
-	[preferences registerBool:&wantsHiddenLabels default:NO forKey:@"wantsHiddenLabels"];
-	[preferences registerBool:&wantsHiddenPageDots default:NO forKey:@"wantsHiddenPageDots"];
-	[preferences registerBool:&wantsTransparentDock default:NO forKey:@"wantsTransparentDock"];
-	[preferences registerBool:&hideFolderBackground default:NO forKey:@"hideFolderBackground"];
-	[preferences registerBool:&wantsOlderNotifs default:NO forKey:@"wantsOlderNotifs"];
-	[preferences registerBool:&wantsHomeBar default:NO forKey:@"wantsHomeBar"];
-	[preferences registerBool:&noTodayHS default:NO forKey:@"noTodayHS"];
-	[preferences registerBool:&noTodayLS default:NO forKey:@"noTodayLS"];
-	[preferences registerBool:&wantsHapticScreenshot default:YES forKey:@"wantsHapticScreenshot"];
-	[preferences registerBool:&wantsHapticVol default:NO forKey:@"wantsHapticVol"];
-	[preferences registerBool:&noSpotlight default:NO forKey:@"noSpotlight"];
-	[preferences registerBool:&reachChevron default:NO forKey:@"reachChevron"];
-	[preferences registerBool:&reachTimer default:NO forKey:@"reachTimer"];
-	[preferences registerFloat:&hapticPref default:1 forKey:@"hapticPref"];
-	[preferences registerFloat:&volumePref default:0 forKey:@"volumePref"];
-	[preferences registerFloat:&screenshotPref default:1 forKey:@"screenshotPref"];
+    NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:PLIST_PATH];
+    isEnabled = [prefs objectForKey:@"isEnabled"] ? [[prefs objectForKey:@"isEnabled"] boolValue] : NO;
+	wantsHomeBar = [prefs objectForKey:@"wantsHomeBar"] ? [[prefs objectForKey:@"wantsHomeBar"] boolValue] : NO;
+    wantsOlderNotifs = [prefs objectForKey:@"wantsOlderNotifs"] ? [[prefs objectForKey:@"wantsOlderNotifs"] boolValue] : NO;
+    wantsTransparentDock = [prefs objectForKey:@"wantsTransparentDock"] ? [[prefs objectForKey:@"wantsTransparentDock"] boolValue] : NO;
+    wantsHiddenPageDots = [prefs objectForKey:@"wantsHiddenPageDots"] ? [[prefs objectForKey:@"wantsHiddenPageDots"] boolValue] : NO;
+    wantsHiddenLabels = [prefs objectForKey:@"wantsHiddenLabels"] ? [[prefs objectForKey:@"wantsHiddenLabels"] boolValue] : NO;
+    hideFolderBackground = [prefs objectForKey:@"hideFolderBackground"] ? [[prefs objectForKey:@"hideFolderBackground"] boolValue] : NO;
+    moonGone = [prefs objectForKey:@"moonGone"] ? [[prefs objectForKey:@"moonGone"] boolValue] : NO;
+    noTodayLS = [prefs objectForKey:@"noTodayLS"] ? [[prefs objectForKey:@"noTodayLS"] boolValue] : NO;
+    noTodayHS = [prefs objectForKey:@"noTodayHS"] ? [[prefs objectForKey:@"noTodayHS"] boolValue] : NO;
+    wantsHapticVol = [prefs objectForKey:@"wantsHapticVol"] ? [[prefs objectForKey:@"wantsHapticVol"] boolValue] : NO;
+    wantsHapticScreenshot = [prefs objectForKey:@"wantsHapticScreenshot"] ? [[prefs objectForKey:@"wantsHapticScreenshot"] boolValue] : NO;
+    noSpotlight = [prefs objectForKey:@"noSpotlight"] ? [[prefs objectForKey:@"noSpotlight"] boolValue] : NO;
+	reachChevron = [prefs objectForKey:@"reachChevron"] ? [[prefs objectForKey:@"reachChevron"] boolValue] : NO;
+	reachTimer = [prefs objectForKey:@"reachTimer"] ? [[prefs objectForKey:@"reachTimer"] boolValue] : NO;
+	wantsBatteryPercentage = [prefs objectForKey:@"wantsBatteryPercentage"] ? [[prefs objectForKey:@"wantsBatteryPercentage"] boolValue] : NO;
+    hapticPref = [[prefs objectForKey:@"hapticPref"] floatValue];
+    screenshotPref = [[prefs objectForKey:@"screenshotPref"] floatValue];
+    volumePref = [[prefs objectForKey:@"volumePref"] floatValue];
 }

@@ -28,25 +28,26 @@
   }
 @end
 
-@interface OBButtonTray : UIView
-- (void)addButton:(id)arg1;
-- (void)addCaptionText:(id)arg1;;
-@end
-
-@interface OBBoldTrayButton : UIButton
--(void)setTitle:(id)arg1 forState:(unsigned long long)arg2;
-+(id)buttonWithType:(long long)arg1;
-@end
-
-@interface OBWelcomeController : UIViewController
-- (OBButtonTray *)buttonTray;
-- (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3;
-- (void)addBulletedListItemWithTitle:(id)arg1 description:(id)arg2 image:(id)arg3;
-@end
-
-OBWelcomeController *welcomeController; // Declaring this here outside of a method will allow the use of it later, such as dismissing.
-
 @implementation SB
+
+- (id)readPreferenceValue:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	return (settings[specifier.properties[@"key"]]) ?: specifier.properties[@"default"];
+}
+
+- (void)setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	[settings setObject:value forKey:specifier.properties[@"key"]];
+	[settings writeToFile:path atomically:YES];
+	CFStringRef notificationName = (__bridge CFStringRef)specifier.properties[@"PostNotification"];
+	if (notificationName) {
+		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), notificationName, NULL, NULL, YES);
+	}
+}
 
 - (id)specifiers {
 	if(_specifiers == nil) {
@@ -55,15 +56,28 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 	return _specifiers;
 }
 
--(void)viewDidLoad {
-	[super viewDidLoad];
-	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
-    self.hb_appearanceSettings = appearanceSettings;
-}
-
 @end
 
 @implementation Lockscreen
+
+- (id)readPreferenceValue:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	return (settings[specifier.properties[@"key"]]) ?: specifier.properties[@"default"];
+}
+
+- (void)setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	[settings setObject:value forKey:specifier.properties[@"key"]];
+	[settings writeToFile:path atomically:YES];
+	CFStringRef notificationName = (__bridge CFStringRef)specifier.properties[@"PostNotification"];
+	if (notificationName) {
+		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), notificationName, NULL, NULL, YES);
+	}
+}
 
 - (id)specifiers {
 	if(_specifiers == nil) {
@@ -72,49 +86,28 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 	return _specifiers;
 }
 
--(void)viewDidLoad {
-	[super viewDidLoad];
-	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
-    self.hb_appearanceSettings = appearanceSettings;
-}
-
-@end
-
-@implementation Applications
-
-- (id)specifiers {
-	if(_specifiers == nil) {
-		_specifiers = [self loadSpecifiersFromPlistName:@"Applications" target:self];
-	}
-	return _specifiers;
-}
-
--(void)viewDidLoad {
-	[super viewDidLoad];
-	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
-    self.hb_appearanceSettings = appearanceSettings;
-}
-
-@end
-
-@implementation Reddit
-
-- (id)specifiers {
-	if(_specifiers == nil) {
-		_specifiers = [self loadSpecifiersFromPlistName:@"Reddit" target:self];
-	}
-	return _specifiers;
-}
-
--(void)viewDidLoad {
-	[super viewDidLoad];
-	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
-    self.hb_appearanceSettings = appearanceSettings;
-}
-
 @end
 
 @implementation Haptics
+
+- (id)readPreferenceValue:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	return (settings[specifier.properties[@"key"]]) ?: specifier.properties[@"default"];
+}
+
+- (void)setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	[settings setObject:value forKey:specifier.properties[@"key"]];
+	[settings writeToFile:path atomically:YES];
+	CFStringRef notificationName = (__bridge CFStringRef)specifier.properties[@"PostNotification"];
+	if (notificationName) {
+		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), notificationName, NULL, NULL, YES);
+	}
+}
 
 - (id)specifiers {
 	if(_specifiers == nil) {
@@ -123,15 +116,28 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 	return _specifiers;
 }
 
--(void)viewDidLoad {
-	[super viewDidLoad];
-	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
-    self.hb_appearanceSettings = appearanceSettings;
-}
-
 @end
 
 @implementation Reachability
+
+- (id)readPreferenceValue:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	return (settings[specifier.properties[@"key"]]) ?: specifier.properties[@"default"];
+}
+
+- (void)setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	[settings setObject:value forKey:specifier.properties[@"key"]];
+	[settings writeToFile:path atomically:YES];
+	CFStringRef notificationName = (__bridge CFStringRef)specifier.properties[@"PostNotification"];
+	if (notificationName) {
+		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), notificationName, NULL, NULL, YES);
+	}
+}
 
 - (id)specifiers {
 	if(_specifiers == nil) {
@@ -140,15 +146,40 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 	return _specifiers;
 }
 
--(void)viewDidLoad {
-	[super viewDidLoad];
-	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
-    self.hb_appearanceSettings = appearanceSettings;
-}
-
 @end
 
 @implementation Creds
+
+- (id)readPreferenceValue:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	return (settings[specifier.properties[@"key"]]) ?: specifier.properties[@"default"];
+}
+
+- (void)setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	[settings setObject:value forKey:specifier.properties[@"key"]];
+	[settings writeToFile:path atomically:YES];
+	CFStringRef notificationName = (__bridge CFStringRef)specifier.properties[@"PostNotification"];
+	if (notificationName) {
+		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), notificationName, NULL, NULL, YES);
+	}
+}
+
+- (void)samohtLink {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://reddit.com/u/bobbyboys301"] options:@{} completionHandler:nil];
+}
+
+- (void)thomzLink {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/thomz07"] options:@{} completionHandler:nil];
+}
+
+- (void)ajaidanLink {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/ajaidan0"] options:@{} completionHandler:nil];
+}
 
 - (id)specifiers {
 	if(_specifiers == nil) {
@@ -157,34 +188,42 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 	return _specifiers;
 }
 
--(void)viewDidLoad {
-	[super viewDidLoad];
-	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
-    self.hb_appearanceSettings = appearanceSettings;
-}
-
 @end
 
 @implementation MAVRootListController
 
--(void)respring {
-	[HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=Mavalry"]];
+- (id)readPreferenceValue:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	return (settings[specifier.properties[@"key"]]) ?: specifier.properties[@"default"];
 }
 
-- (void)confirmPrompt {
-	AudioServicesPlaySystemSound(1520);
-	UIAlertController *confirmAlert = [UIAlertController alertControllerWithTitle:@"Mavalry"
-	message:@"Mavalry now needs to respring to enact the tweak changes."
-	preferredStyle:UIAlertControllerStyleActionSheet];
+- (void)setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	[settings setObject:value forKey:specifier.properties[@"key"]];
+	[settings writeToFile:path atomically:YES];
+	CFStringRef notificationName = (__bridge CFStringRef)specifier.properties[@"PostNotification"];
+	if (notificationName) {
+		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), notificationName, NULL, NULL, YES);
+	}
+}
 
-	UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
-		[self  respring];
-	}];
+- (void)sourceLink {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/ajaidan0/Open-Sourced-Tweaks/tree/master/Mavalry"] options:@{} completionHandler:nil];
+}
 
-	[confirmAlert addAction:confirmAction];
+- (void)discordLink {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://discord.gg/hhRHwWp"] options:@{} completionHandler:nil];
+}
 
-	AudioServicesPlaySystemSound(1520);
-	[self presentViewController:confirmAlert animated:YES completion:nil];
+-(void)respring {
+	NSURL *returnURL = [NSURL URLWithString:@"prefs:root=Mavalry"]; 
+    SBSRelaunchAction *restartAction;
+    restartAction = [NSClassFromString(@"SBSRelaunchAction") actionWithReason:@"RestartRenderServer" options:SBSRelaunchActionOptionsFadeToBlackTransition targetURL:returnURL];
+    [[NSClassFromString(@"FBSSystemService") sharedService] sendActions:[NSSet setWithObject:restartAction] withResult:nil];
 }
 
 - (NSArray *)specifiers {
@@ -203,12 +242,6 @@ OBWelcomeController *welcomeController; // Declaring this here outside of a meth
 
 	}
 	return self;
-}
-
--(void)viewDidLoad {
-	[super viewDidLoad];
-	MAVAppearanceSettings *appearanceSettings = [[MAVAppearanceSettings alloc] init];
-    self.hb_appearanceSettings = appearanceSettings;
 }
 
 @end

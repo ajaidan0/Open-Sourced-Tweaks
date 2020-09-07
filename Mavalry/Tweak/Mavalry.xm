@@ -221,13 +221,14 @@
 
 // Loads prefs and inits
 %ctor {
+	loadPrefs();
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.ajaidan.mavalryprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 	// Get current application/process
 	NSString *processName = [[%c(NSBundle) mainBundle] bundleIdentifier];
     // If the process isn't SpringBoard, replace UITableView with our new class
     if (![processName isEqualToString:@"com.apple.SpringBoard"]) {
         return;
     } else {
-		prefs();
 		if (isEnabled) {
 			if (moonGone) %init(DNDNotifs); else {}
 			if (wantsBatteryPercentage) %init(BatteryPercentage); else {}

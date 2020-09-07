@@ -223,29 +223,22 @@
 %ctor {
 	loadPrefs();
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.ajaidan.mavalryprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
-	// Get current application/process
-	NSString *processName = [[%c(NSBundle) mainBundle] bundleIdentifier];
-    // If the process isn't SpringBoard, replace UITableView with our new class
-    if (![processName isEqualToString:@"com.apple.SpringBoard"]) {
-        return;
-    } else {
-		if (isEnabled) {
-			if (moonGone) %init(DNDNotifs); else {}
-			if (wantsBatteryPercentage) %init(BatteryPercentage); else {}
-			if (wantsHiddenLabels) %init(HideLabels); else {}
-			if (wantsHiddenPageDots) %init(PageDots); else {}
-			if (wantsTransparentDock) %init(DockBG); else {}
-			if (hideFolderBackground) %init(FolderBG); else {}
-			if (wantsOlderNotifs) %init(OlderNotifs); else {}
-			if (wantsHomeBar) %init(HomeBar); else {}
-			if (noTodayHS) %init(HSnoToday); else {}
-			if (noTodayLS) %init(LSnoToday); else {}
-			if (wantsHapticScreenshot) %init(Screenshot); else {}
-			if (wantsHapticVol) %init(HapticVolume); else {}
-			if (volumePref != 0.0) %init(VolumeStep); else {}
-			if (noSpotlight) %init(HSnoSpotlight); else {}
-			if (reachChevron) %init(ReachChevron) else {}
-			if (reachTimer) %init(ReachTimer) else {}
-		}
+	if (isEnabled) {
+		if (moonGone) %init(DNDNotifs); else {}
+		if (wantsBatteryPercentage) %init(BatteryPercentage); else {}
+		if (wantsHiddenLabels) %init(HideLabels); else {}
+		if (wantsHiddenPageDots) %init(PageDots); else {}
+		if (wantsTransparentDock) %init(DockBG); else {}
+		if (hideFolderBackground) %init(FolderBG); else {}
+		if (wantsOlderNotifs) %init(OlderNotifs); else {}
+		if (wantsHomeBar) %init(HomeBar); else {}
+		if (noTodayHS) %init(HSnoToday); else {}
+		if (noTodayLS) %init(LSnoToday); else {}
+		if (wantsHapticScreenshot) %init(Screenshot); else {}
+		if (wantsHapticVol) %init(HapticVolume); else {}
+		if (volumePref != 0.0) %init(VolumeStep); else {}
+		if (noSpotlight) %init(HSnoSpotlight); else {}
+		if (reachChevron) %init(ReachChevron) else {}
+		if (reachTimer) %init(ReachTimer) else {}
 	}
 }

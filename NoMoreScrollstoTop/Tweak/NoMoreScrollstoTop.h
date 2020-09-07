@@ -4,8 +4,15 @@
  * Copyright (c) ajaidan0 2020 (https://github.com/ajaidan0)
 */
 
-#import <Cephei/HBPreferences.h>
-#import <SparkAppList.h>
+#import <libSparkAppList/SparkAppList.h>
 #import <UIKit/UIKit.h>
+#define PLIST_PATH @"/var/mobile/Library/Preferences/com.ajaidan.scrollsprefs.plist"
 
 BOOL isEnabled;
+
+static void loadPrefs()
+{
+    NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:PLIST_PATH];
+    isEnabled = [prefs objectForKey:@"isEnabled"] ? [[prefs objectForKey:@"isEnabled"] boolValue] : NO;
+}
+

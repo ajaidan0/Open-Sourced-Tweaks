@@ -1,7 +1,25 @@
 #include "ROPRootListController.h"
-#import <spawn.h>
 
 @implementation ROPRootListController
+
+- (id)readPreferenceValue:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	return (settings[specifier.properties[@"key"]]) ?: specifier.properties[@"default"];
+}
+
+- (void)setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
+	NSString *path = [NSString stringWithFormat:@"/User/Library/Preferences/%@.plist", specifier.properties[@"defaults"]];
+	NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+	[settings addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
+	[settings setObject:value forKey:specifier.properties[@"key"]];
+	[settings writeToFile:path atomically:YES];
+	CFStringRef notificationName = (__bridge CFStringRef)specifier.properties[@"PostNotification"];
+	if (notificationName) {
+		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), notificationName, NULL, NULL, YES);
+	}
+}
 
 - (NSArray *)specifiers {
 	if (!_specifiers) {
@@ -11,26 +29,29 @@
 	return _specifiers;
 }
 
--(void)loadView {
-	[super loadView];
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Apply" style:UIBarButtonItemStylePlain target:self action:@selector(respring)];
+- (void)sourceLink {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/ajaidan0/Open-Sourced-Tweaks/tree/master/ReachOptions"] options:@{} completionHandler:nil];
+}
+
+- (void)discordLink {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://discord.gg/hhRHwWp"] options:@{} completionHandler:nil];
+}
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+  	UIBarButtonItem *respringButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Apply"
+                                   style:UIBarButtonItemStylePlain
+                                   target:self
+                                   action:@selector(respring)];
+	self.navigationItem.rightBarButtonItem = respringButton;
 }
 
 -(void)respring {
-	UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ReachOptions" message:@"Applying Settings Will Respring Your Device. Are You Sure You Want To Respring Now?" preferredStyle:UIAlertControllerStyleAlert];
-
-	UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Not Now" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-	}];
-
-	UIAlertAction *respring = [UIAlertAction actionWithTitle:@"Respring" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-		pid_t pid;
-		const char* args[] = {"sbreload", NULL, NULL};
-		posix_spawn(&pid, "/usr/bin/sbreload", NULL, NULL, (char* const*)args, NULL);
-	}];
-
-	[alert addAction:dismiss];
-	[alert addAction:respring];
-	[self presentViewController:alert animated:YES completion:nil];
+	NSURL *returnURL = [NSURL URLWithString:@"prefs:root=Mavalry"]; 
+  	SBSRelaunchAction *restartAction;
+  	restartAction = [NSClassFromString(@"SBSRelaunchAction") actionWithReason:@"RestartRenderServer" options:SBSRelaunchActionOptionsFadeToBlackTransition targetURL:returnURL];
+  	[[NSClassFromString(@"FBSSystemService") sharedService] sendActions:[NSSet setWithObject:restartAction] withResult:nil];
 }
 
 @end

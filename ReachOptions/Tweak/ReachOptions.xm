@@ -202,13 +202,5 @@
 
 // Loads prefs and inits
 %ctor {
-	HBPreferences *preferences = [[HBPreferences alloc] initWithIdentifier:@"com.ajaidan.reachoptionsprefs"];
-    [preferences registerBool:&isEnabled default:NO forKey:@"isEnabled"];
-	[preferences registerBool:&ss default:NO forKey:@"1"];
-	[preferences registerBool:&cc default:NO forKey:@"2"];
-	[preferences registerBool:&lock default:NO forKey:@"3"];
-	[preferences registerBool:&respring default:NO forKey:@"4"];
-	[preferences registerBool:&uicache default:NO forKey:@"5"];
-    [preferences registerBool:&wifi default:NO forKey:@"6"];
-    [preferences registerBool:&spotlight default:NO forKey:@"7"];
+	loadPrefs();
 }

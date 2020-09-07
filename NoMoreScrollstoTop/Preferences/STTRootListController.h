@@ -1,17 +1,11 @@
 #import <Preferences/PSListController.h>
-#import <SparkAppListTableViewController.h>
+#import <libSparkAppList/SparkAppListTableViewController.h>
 #import <Preferences/PSSpecifier.h>
 #import <Preferences/PSSwitchTableCell.h>
-#import <CepheiPrefs/HBRootListController.h>
-#import <CepheiPrefs/HBAppearanceSettings.h>
-#import <Cephei/HBRespringController.h>
-#import <Cephei/HBPreferences.h>
-#import <AudioToolbox/AudioServices.h>
-
-@interface STTAppearanceSettings : HBAppearanceSettings {    
-}
-@end
+#import <Foundation/Foundation.h>
+#import <SpringBoard/SpringBoard.h>
+#import <SpringBoardServices/SBSRestartRenderServerAction.h>
+#import <FrontBoardServices/FBSSystemService.h>
 
 @interface STTRootListController : PSListController
-
 @end

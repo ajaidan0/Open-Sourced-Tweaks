@@ -4,7 +4,6 @@ BUNDLE_NAME = ReachOptionsPrefs
 
 $(BUNDLE_NAME)_FILES = ROPRootListController.m
 $(BUNDLE_NAME)_FRAMEWORKS = UIKit
-$(BUNDLE_NAME)_EXTRA_FRAMEWORKS += Cephei CepheiPrefs
 $(BUNDLE_NAME)_PRIVATE_FRAMEWORKS = Preferences
 $(BUNDLE_NAME)_INSTALL_PATH = /Library/PreferenceBundles
 $(BUNDLE_NAME)_CFLAGS = -fobjc-arc

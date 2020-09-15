@@ -22,9 +22,10 @@
 
 // Respring
 +(void)Respring {
-    pid_t pid;
-	const char* args[] = {"killall", "-9", "SpringBoard", NULL, NULL};
-	posix_spawn(&pid, "/usr/bin/killall", NULL, NULL, (char* const*)args, NULL);
+    NSTask *task = [NSTask new];
+    task.launchPath = @"/usr/bin/killall";
+    task.arguments = @[@"-9", @"SpringBoard"];
+    [task launch];
     return;
 }
 
@@ -42,9 +43,9 @@
 
 // UICache
 +(void)UICache {
-    pid_t pid;
-	const char* args[] = {"uicache", NULL, NULL};
-	posix_spawn(&pid, "/usr/bin/uicache", NULL, NULL, (char* const*)args, NULL);
+    NSTask *task = [NSTask new];
+    task.launchPath = @"/usr/bin/uicache";
+    [task launch];  
     return;
 }
 

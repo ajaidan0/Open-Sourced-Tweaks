@@ -1,9 +1,0 @@
-Package: com.constanze.april
-Name: April
-Version: 2.1.0
-Architecture: iphoneos-arm
-Description: Clean, Simple, Easy to use.
-Maintainer: ajaidan0
-Author: ConstanzeDev, LacertosusDeus
-Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000), ws.hbang.common (>= 1.15), preferenceloader, org.thebigboss.libcolorpicker

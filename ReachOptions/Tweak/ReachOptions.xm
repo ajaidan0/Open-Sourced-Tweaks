@@ -4,6 +4,8 @@
  * Copyright (c) ajaidan0 2020 (https://github.com/ajaidan0)
 */
 
+// Note: Although the following may be very, *very* messy and duplicated, I put the menu code in multiple instances of reachability to prevent the bug that some users are having that causes the menu not to invoke.
+
 #import "ReachOptions.h"
 
 %hook SBReachabilityManager
@@ -17,8 +19,6 @@
         %orig;
     }
 }
-
-// Note: Although the following may be very, *very* messy and duplicated, I put the menu code in multiple instances of reachability to prevent the bug that some users are having that causes the menu not to invoke.
 
 -(void)toggleReachability {
     if (isEnabled) {

@@ -1,6 +1,6 @@
 Package: com.ajaidan.reachoptions
 Name: ReachOptions
-Version: 1.1
+Version: 1.1.1
 Architecture: iphoneos-arm
 Description: A tweak to add options to reachability.
 Maintainer: ajaidan0

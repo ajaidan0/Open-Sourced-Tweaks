@@ -4,6 +4,6 @@ Depends: mobilesubstrate, preferenceloader, com.spark.libsparkapplist
 Version: 1.2
 Architecture: iphoneos-arm
 Description: A simple tweak to disable scrollsToTop in **almost** all apps.
-Maintainer: ajaidan0
-Author: ajaidan0
+Maintainer: Monotrix
+Author: Monotrix
 Section: Tweaks

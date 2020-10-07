@@ -3,7 +3,7 @@ Name: ReachOptions
 Version: 1.1.1
 Architecture: iphoneos-arm
 Description: A tweak to add options to reachability.
-Maintainer: ajaidan0
-Author: ajaidan0
+Maintainer: Monotrix
+Author: Monotrix
 Section: Tweaks
 Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, firmware (>= 11.0)

@@ -1,7 +1,7 @@
 /*
  * Mavalry : Mavalry.h
  *
- * Copyright (c) ajaidan0 2020 (https://github.com/ajaidan0)
+ * Copyright (c) Monotrix 2020 (https://github.com/Monotrix)
 */
 
 #import <UIKit/UIControl.h>

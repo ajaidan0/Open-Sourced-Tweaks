@@ -66,7 +66,7 @@
 }
 
 - (void)sourceLink {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/ajaidan0/Open-Sourced-Tweaks/tree/master/NoMoreScrollstoTop"] options:@{} completionHandler:nil];
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/Monotrix/Open-Sourced-Tweaks/tree/master/NoMoreScrollstoTop"] options:@{} completionHandler:nil];
 }
 
 - (void)discordLink {

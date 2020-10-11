@@ -1,14 +1,14 @@
-/*
+/**
  * Mavalry : Mavalry.h
  *
- * Copyright (c) Monotrix 2020 (https://github.com/Monotrix)
-*/
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
 
 #import <UIKit/UIControl.h>
 #import <sys/utsname.h>
 #import <AudioToolbox/AudioServices.h>
 #import <spawn.h>
-#define PLIST_PATH @"/var/mobile/Library/Preferences/com.ajaidan.mavalryprefs.plist"
+#define PLIST_PATH @"/var/mobile/Library/Preferences/com.monotrix.mavalryprefs.plist"
 
 extern NSString *const kCAFilterDestOut;
 

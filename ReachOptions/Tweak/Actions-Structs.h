@@ -1,8 +1,8 @@
-/*
+/**
  * ReachOptions : Actions-Structs.h
  *
- * Copyright (c) Monotrix 2020 (https://github.com/Monotrix)
-*/
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
 
 #import <Foundation/Foundation.h>
 #include <unistd.h>
@@ -64,7 +64,7 @@
 +(id)currentTaskDictionary;
 +(id)launchedTaskWithDictionary:(id)arg1 ;
 +(id)launchedTaskWithLaunchPath:(id)arg1 arguments:(id)arg2 ;
-+(id)launchedTaskWithExecutableURL:(id)arg1 arguments:(id)arg2 error:(out id*)arg3 terminationHandler:(/*^block*/id)arg4 ;
++(id)launchedTaskWithExecutableURL:(id)arg1 arguments:(id)arg2 error:(out id*)arg3 terminationHandler:(/**^block**/id)arg4 ;
 +(id)allocWithZone:(NSZone*)arg1 ;
 -(NSURL *)executableURL;
 -(id)currentDirectoryPath;

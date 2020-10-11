@@ -1,8 +1,8 @@
-/*
+/**
  * ReachOptions : ReachOptions.x
  *
- * Copyright (c) Monotrix 2020 (https://github.com/Monotrix)
-*/
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
 
 // Note: Although the following may be very, *very* messy and duplicated, I put the menu code in multiple instances of reachability to prevent the bug that some users are having that causes the menu not to invoke.
 
@@ -11,10 +11,10 @@
 %hook SBReachabilityManager
 
 -(void)_setKeepAliveTimer {
-    /* 
+    /***
      * This is to disable the timer on reachability.
      * I did this because sometimes the menu would dismiss (much like reachability) without any notice.
-    */
+    ***/
     if (!isEnabled) {
         %orig;
     }

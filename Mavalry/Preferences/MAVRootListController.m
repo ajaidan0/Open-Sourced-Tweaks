@@ -1,3 +1,9 @@
+/**
+ * ReachOptions : MAVRootListController.m
+ *
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
+
 #include "MAVRootListController.h"
 
 @interface MAVSwitchCell : PSSwitchTableCell
@@ -177,7 +183,7 @@
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/thomz07"] options:@{} completionHandler:nil];
 }
 
-- (void)ajaidanLink {
+- (void)monotrixLink {
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/Monotrix"] options:@{} completionHandler:nil];
 }
 

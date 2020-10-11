@@ -1,3 +1,9 @@
+/**
+ * ReachOptions : STTRootListController.m
+ *
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
+
 #include "STTRootListController.h"
 
 @interface STTSwitchCell : PSSwitchTableCell
@@ -58,7 +64,7 @@
 }
 
 - (void)selectApps {
-  SparkAppListTableViewController* s = [[SparkAppListTableViewController alloc] initWithIdentifier:@"com.ajaidan.scrollsprefs" andKey:@"Apps"];
+  SparkAppListTableViewController* s = [[SparkAppListTableViewController alloc] initWithIdentifier:@"com.monotrix.scrollsprefs" andKey:@"Apps"];
 
     [self.navigationController pushViewController:s animated:YES];
 	  s.navigationItem.title = @"Select Apps";

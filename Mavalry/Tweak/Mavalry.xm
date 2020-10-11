@@ -1,8 +1,8 @@
-/*
+/**
  * Mavalry : Mavalry.xm
  *
- * Copyright (c) Monotrix 2020 (https://github.com/Monotrix)
-*/
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
 
 #import "Mavalry.h"
 
@@ -222,7 +222,7 @@
 // Loads prefs and inits
 %ctor {
 	loadPrefs();
-	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.ajaidan.mavalryprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.monotrix.mavalryprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 	if (isEnabled) {
 		if (moonGone) %init(DNDNotifs); else {}
 		if (wantsBatteryPercentage) %init(BatteryPercentage); else {}

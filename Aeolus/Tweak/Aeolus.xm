@@ -1,8 +1,8 @@
-/*
+/**
  * Aeolus : Aeolus.xm
  *
- * Copyright (c) Monotrix 2020 (https://github.com/Monotrix)
-*/
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
 
 %group Tweak
 // Hook UITableView

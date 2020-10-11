@@ -1,8 +1,8 @@
-/*
+/**
  * ReachOptions : Actions.x
  *
- * Copyright (c) Monotrix 2020 (https://github.com/Monotrix)
-*/
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
 
 #import "Actions-Structs.h"
 

@@ -20,7 +20,7 @@
 			<key>icon</key>
 			<string>GitHub.png</string>
 			<key>action</key>
-			<string>ajaidanLink</string>
+			<string>monotrixLink</string>
 		</dict>
 
 		<dict>

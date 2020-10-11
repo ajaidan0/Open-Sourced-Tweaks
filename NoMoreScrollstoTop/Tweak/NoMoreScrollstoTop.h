@@ -1,12 +1,12 @@
-/*
+/**
  * ReachOptions : ReachOptions.h
  *
- * Copyright (c) Monotrix 2020 (https://github.com/Monotrix)
-*/
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
 
 #import <libSparkAppList/SparkAppList.h>
 #import <UIKit/UIKit.h>
-#define PLIST_PATH @"/var/mobile/Library/Preferences/com.ajaidan.scrollsprefs.plist"
+#define PLIST_PATH @"/var/mobile/Library/Preferences/com.monotrix.scrollsprefs.plist"
 
 BOOL isEnabled;
 

@@ -1,3 +1,9 @@
+/**
+ * ReachOptions : ROPRootListController.m
+ *
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
+
 #include "ROPRootListController.h"
 
 @implementation ROPRootListController
@@ -48,7 +54,7 @@
 }
 
 -(void)respring {
-	NSURL *returnURL = [NSURL URLWithString:@"prefs:root=Mavalry"]; 
+	NSURL *returnURL = [NSURL URLWithString:@"prefs:root=ReachOptions"]; 
   	SBSRelaunchAction *restartAction;
   	restartAction = [NSClassFromString(@"SBSRelaunchAction") actionWithReason:@"RestartRenderServer" options:SBSRelaunchActionOptionsFadeToBlackTransition targetURL:returnURL];
   	[[NSClassFromString(@"FBSSystemService") sharedService] sendActions:[NSSet setWithObject:restartAction] withResult:nil];

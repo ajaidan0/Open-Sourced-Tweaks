@@ -1,8 +1,8 @@
-/*
+/**
  * NoMoreScrollstoTop : NoMoreScrollstoTop.xm
  *
- * Copyright (c) Monotrix 2020 (https://github.com/Monotrix)
-*/
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
 
 #import "NoMoreScrollstoTop.h"
 
@@ -27,11 +27,11 @@
 %ctor {
 
     loadPrefs();
-	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.ajaidan.scrollsprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.monotrix.scrollsprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 
 	NSString* bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
 
-    if([SparkAppList doesIdentifier:@"com.ajaidan.scrollsprefs" andKey:@"apps" containBundleIdentifier:bundleIdentifier] && isEnabled) {
+    if([SparkAppList doesIdentifier:@"com.monotrix.scrollsprefs" andKey:@"apps" containBundleIdentifier:bundleIdentifier] && isEnabled) {
 		%init (Tweak);
     }
 }

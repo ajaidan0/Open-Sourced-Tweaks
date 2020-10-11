@@ -26,13 +26,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.ajaidan.mavalryprefs</string>
+			<string>com.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>reachChevron</string>
 			<key>label</key>
 			<string>Remove Reachability Chevron</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -47,13 +47,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.ajaidan.mavalryprefs</string>
+			<string>com.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>reachTimer</string>
 			<key>label</key>
 			<string>Remove Reachability Timer</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 	</array>

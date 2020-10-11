@@ -1,3 +1,9 @@
+/**
+ * ReachOptions : ROPRootListController.h
+ *
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
+
 #import <Preferences/PSListController.h>
 #import <libSparkAppList/SparkAppListTableViewController.h>
 #import <Preferences/PSSpecifier.h>

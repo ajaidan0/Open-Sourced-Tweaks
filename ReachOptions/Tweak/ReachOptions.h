@@ -1,12 +1,12 @@
-/*
+/**
  * ReachOptions : ReachOptions.h
  *
- * Copyright (c) Monotrix 2020 (https://github.com/Monotrix)
-*/
+ * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
+**/
 
 #import "Actions-Structs.h"
 #import "UIDevice+notchedDevice.h"
-#define PLIST_PATH @"/var/mobile/Library/Preferences/com.ajaidan.reachoptionsprefs.plist"
+#define PLIST_PATH @"/var/mobile/Library/Preferences/com.monotrix.reachoptionsprefs.plist"
 
 @interface SBReachabilityManager : UIAlertController
 -(void)_setKeepAliveTimer;

@@ -24,13 +24,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.ajaidan.mavalryprefs</string>
+			<string>com.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>wantsHiddenLabels</string>
 			<key>label</key>
 			<string>Hide Icon Labels</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<!-- enable/disable button -->
@@ -46,13 +46,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.ajaidan.mavalryprefs</string>
+			<string>com.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>hideFolderBackground</string>
 			<key>label</key>
 			<string>Hide Folder Background</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<!-- enable/disable page dots button -->
@@ -68,13 +68,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.ajaidan.mavalryprefs</string>
+			<string>com.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>wantsHiddenPageDots</string>
 			<key>label</key>
 			<string>Hide Page Dots</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<!-- enable/disable transparent dock button -->
@@ -90,13 +90,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.ajaidan.mavalryprefs</string>
+			<string>com.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>wantsTransparentDock</string>
 			<key>label</key>
 			<string>Transparent Dock</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<!-- enable/disable hiding wantsHomeBar -->
@@ -112,13 +112,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.ajaidan.mavalryprefs</string>
+			<string>com.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>wantsHomeBar</string>
 			<key>label</key>
 			<string>Hide Home Bar</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -133,13 +133,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.ajaidan.mavalryprefs</string>
+			<string>com.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>noTodayHS</string>
 			<key>label</key>
 			<string>Hide Today View</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -154,13 +154,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.ajaidan.mavalryprefs</string>
+			<string>com.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>noSpotlight</string>
 			<key>label</key>
 			<string>Remove Spotlight Search</string>
 			<key>PostNotification</key>
-			<string>com.ajaidan.mavalryprefs/ReloadPrefs</string>
+			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 	</array>
 	<key>title</key>

@@ -203,4 +203,5 @@
 // Loads prefs and inits
 %ctor {
 	loadPrefs();
+    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("xyz.monotrix.reachoptionsprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 }

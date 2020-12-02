@@ -1,7 +1,7 @@
-Package: com.monotrix.mavalry
+Package: xyz.monotrix.mavalry
 Name: Mavalry
 Depends: mobilesubstrate, firmware (>= 13.0), preferenceloader
-Version: 2.1
+Version: 2.1-EOL
 Architecture: iphoneos-arm
 Description: iOS customization, done right.
 Maintainer: Monotrix

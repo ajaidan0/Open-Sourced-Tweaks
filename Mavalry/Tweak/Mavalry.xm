@@ -222,7 +222,7 @@
 // Loads prefs and inits
 %ctor {
 	loadPrefs();
-	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.monotrix.mavalryprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("xyz.monotrix.mavalryprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 	if (isEnabled) {
 		if (moonGone) %init(DNDNotifs); else {}
 		if (wantsBatteryPercentage) %init(BatteryPercentage); else {}

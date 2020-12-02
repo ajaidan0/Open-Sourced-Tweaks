@@ -64,7 +64,7 @@
 }
 
 - (void)selectApps {
-  SparkAppListTableViewController* s = [[SparkAppListTableViewController alloc] initWithIdentifier:@"com.monotrix.scrollsprefs" andKey:@"Apps"];
+  SparkAppListTableViewController* s = [[SparkAppListTableViewController alloc] initWithIdentifier:@"xyz.monotrix.scrollsprefs" andKey:@"Apps"];
 
     [self.navigationController pushViewController:s animated:YES];
 	  s.navigationItem.title = @"Select Apps";
@@ -80,7 +80,7 @@
 }
 
 - (void)respring {
-  NSURL *returnURL = [NSURL URLWithString:@"prefs:root=Mavalry"]; 
+  NSURL *returnURL = [NSURL URLWithString:@"prefs:root=NoMoreScrollstoTop"]; 
   SBSRelaunchAction *restartAction;
   restartAction = [NSClassFromString(@"SBSRelaunchAction") actionWithReason:@"RestartRenderServer" options:SBSRelaunchActionOptionsFadeToBlackTransition targetURL:returnURL];
   [[NSClassFromString(@"FBSSystemService") sharedService] sendActions:[NSSet setWithObject:restartAction] withResult:nil];

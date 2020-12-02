@@ -8,7 +8,7 @@
 #import <sys/utsname.h>
 #import <AudioToolbox/AudioServices.h>
 #import <spawn.h>
-#define PLIST_PATH @"/var/mobile/Library/Preferences/com.monotrix.mavalryprefs.plist"
+#define PLIST_PATH @"/var/mobile/Library/Preferences/xyz.monotrix.mavalryprefs.plist"
 
 extern NSString *const kCAFilterDestOut;
 

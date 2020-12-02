@@ -25,13 +25,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.monotrix.mavalryprefs</string>
+			<string>xyz.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>wantsOlderNotifs</string>
 			<key>label</key>
 			<string>Hide Older Notifications Text</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -46,13 +46,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.monotrix.mavalryprefs</string>
+			<string>xyz.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>moonGone</string>
 			<key>label</key>
 			<string>Hide DND Notification</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -67,13 +67,13 @@
  			 <key>switchColorAlpha</key>
   			<real>1.0</real>
 			<key>defaults</key>
-			<string>com.monotrix.mavalryprefs</string>
+			<string>xyz.monotrix.mavalryprefs</string>
 			<key>key</key>
 			<string>noTodayLS</string>
 			<key>label</key>
 			<string>Hide Today View</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.mavalryprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.mavalryprefs/ReloadPrefs</string>
 		</dict>
 
 	</array>

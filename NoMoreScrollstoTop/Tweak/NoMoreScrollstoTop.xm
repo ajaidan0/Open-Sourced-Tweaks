@@ -9,16 +9,9 @@
 %group Tweak
 %hook UIScrollView
 
--(id)initWithFrame:(CGRect)frame {
-    self = %orig;
-    self.scrollsToTop = FALSE;
-    return self;
-}
-
 -(id)initWithCoder:(id)arg1 {
-    self = %orig;
-    self.scrollsToTop = FALSE;
-    return self;
+    self.scrollsToTop = NO;
+    return %orig;
 }
 
 %end
@@ -27,11 +20,11 @@
 %ctor {
 
     loadPrefs();
-	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("com.monotrix.scrollsprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)loadPrefs, CFSTR("xyz.monotrix.scrollsprefs/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 
 	NSString* bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
 
-    if([SparkAppList doesIdentifier:@"com.monotrix.scrollsprefs" andKey:@"apps" containBundleIdentifier:bundleIdentifier] && isEnabled) {
-		%init (Tweak);
+    if([SparkAppList doesIdentifier:@"xyz.monotrix.scrollsprefs" andKey:@"apps" containBundleIdentifier:bundleIdentifier] && isEnabled) {
+		%init(Tweak);
     }
 }

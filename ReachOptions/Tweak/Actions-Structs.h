@@ -44,7 +44,7 @@
 @end
 
 
-// Begin NSTask
+// Begin NSTask (Thanks, Apple!)
 @class NSURL, NSArray, NSDictionary;
 
 @interface NSTask : NSObject

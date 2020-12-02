@@ -1,4 +1,4 @@
-Package: com.monotrix.nomorescrollstotop
+Package: xyz.monotrix.nomorescrollstotop
 Name: NoMoreScrollstoTop
 Depends: mobilesubstrate, preferenceloader, com.spark.libsparkapplist
 Version: 1.2

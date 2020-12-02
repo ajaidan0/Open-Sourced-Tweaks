@@ -6,7 +6,7 @@
 
 #import "Actions-Structs.h"
 #import "UIDevice+notchedDevice.h"
-#define PLIST_PATH @"/var/mobile/Library/Preferences/com.monotrix.reachoptionsprefs.plist"
+#define PLIST_PATH @"/var/mobile/Library/Preferences/xyz.monotrix.reachoptionsprefs.plist"
 
 @interface SBReachabilityManager : UIAlertController
 -(void)_setKeepAliveTimer;

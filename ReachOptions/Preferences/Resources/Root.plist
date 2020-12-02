@@ -10,13 +10,13 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>com.monotrix.reachoptionsprefs</string>
+			<string>xyz.monotrix.reachoptionsprefs</string>
 			<key>key</key>
 			<string>isEnabled</string>
 			<key>label</key>
 			<string>Enabled</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.reachoptionsprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.reachoptionsprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -32,13 +32,13 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>com.monotrix.reachoptionsprefs</string>
+			<string>xyz.monotrix.reachoptionsprefs</string>
 			<key>key</key>
 			<string>1</string>
 			<key>label</key>
 			<string>Screenshot</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.reachoptionsprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.reachoptionsprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -47,13 +47,13 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>com.monotrix.reachoptionsprefs</string>
+			<string>xyz.monotrix.reachoptionsprefs</string>
 			<key>key</key>
 			<string>2</string>
 			<key>label</key>
 			<string>Control Center</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.reachoptionsprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.reachoptionsprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -62,13 +62,13 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>com.monotrix.reachoptionsprefs</string>
+			<string>xyz.monotrix.reachoptionsprefs</string>
 			<key>key</key>
 			<string>3</string>
 			<key>label</key>
 			<string>Lock Device</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.reachoptionsprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.reachoptionsprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -77,13 +77,13 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>com.monotrix.reachoptionsprefs</string>
+			<string>xyz.monotrix.reachoptionsprefs</string>
 			<key>key</key>
 			<string>4</string>
 			<key>label</key>
 			<string>Respring</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.reachoptionsprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.reachoptionsprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -92,13 +92,13 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>com.monotrix.reachoptionsprefs</string>
+			<string>xyz.monotrix.reachoptionsprefs</string>
 			<key>key</key>
 			<string>5</string>
 			<key>label</key>
 			<string>UICache</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.reachoptionsprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.reachoptionsprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -107,13 +107,13 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>com.monotrix.reachoptionsprefs</string>
+			<string>xyz.monotrix.reachoptionsprefs</string>
 			<key>key</key>
 			<string>6</string>
 			<key>label</key>
 			<string>WiFi</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.reachoptionsprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.reachoptionsprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>
@@ -122,13 +122,13 @@
 			<key>default</key>
 			<false/>
 			<key>defaults</key>
-			<string>com.monotrix.reachoptionsprefs</string>
+			<string>xyz.monotrix.reachoptionsprefs</string>
 			<key>key</key>
 			<string>7</string>
 			<key>label</key>
 			<string>Spotlight</string>
 			<key>PostNotification</key>
-			<string>com.monotrix.reachoptionsprefs/ReloadPrefs</string>
+			<string>xyz.monotrix.reachoptionsprefs/ReloadPrefs</string>
 		</dict>
 
 		<dict>

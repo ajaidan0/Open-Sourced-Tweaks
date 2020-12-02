@@ -5,13 +5,11 @@
 **/
 
 #import <libSparkAppList/SparkAppList.h>
-#import <UIKit/UIKit.h>
-#define PLIST_PATH @"/var/mobile/Library/Preferences/com.monotrix.scrollsprefs.plist"
+#define PLIST_PATH @"/var/mobile/Library/Preferences/xyz.monotrix.scrollsprefs.plist"
 
 BOOL isEnabled;
 
-static void loadPrefs()
-{
+static void loadPrefs() {
     NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:PLIST_PATH];
     isEnabled = [prefs objectForKey:@"isEnabled"] ? [[prefs objectForKey:@"isEnabled"] boolValue] : NO;
 }

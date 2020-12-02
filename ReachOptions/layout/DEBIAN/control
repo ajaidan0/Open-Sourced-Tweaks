@@ -1,6 +1,6 @@
 Package: xyz.monotrix.reachoptions
 Name: ReachOptions
-Version: 1.2.1
+Version: 1.2.2
 Architecture: iphoneos-arm
 Description: A tweak to add options to reachability.
 Maintainer: Monotrix

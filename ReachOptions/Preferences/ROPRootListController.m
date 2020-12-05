@@ -39,10 +39,6 @@
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/Monotrix/Open-Sourced-Tweaks/tree/master/ReachOptions"] options:@{} completionHandler:nil];
 }
 
-- (void)discordLink {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://discord.gg/hhRHwWp"] options:@{} completionHandler:nil];
-}
-
 - (void)viewDidLoad {
 	[super viewDidLoad];
   	UIBarButtonItem *respringButton = [[UIBarButtonItem alloc]

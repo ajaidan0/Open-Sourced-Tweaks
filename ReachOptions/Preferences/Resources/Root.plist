@@ -147,15 +147,6 @@
 			<string>sourceLink</string>
 		</dict>
 
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>label</key>
-			<string>Discord Support Server</string>
-			<key>action</key>
-			<string>discordLink</string>
-		</dict>
-
 	</array>
 	<key>title</key>
 	<string>ReachOptions</string>

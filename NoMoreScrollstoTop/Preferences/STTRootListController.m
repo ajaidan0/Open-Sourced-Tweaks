@@ -75,10 +75,6 @@
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/Monotrix/Open-Sourced-Tweaks/tree/master/NoMoreScrollstoTop"] options:@{} completionHandler:nil];
 }
 
-- (void)discordLink {
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://discord.gg/hhRHwWp"] options:@{} completionHandler:nil];
-}
-
 - (void)respring {
   NSURL *returnURL = [NSURL URLWithString:@"prefs:root=NoMoreScrollstoTop"]; 
   SBSRelaunchAction *restartAction;

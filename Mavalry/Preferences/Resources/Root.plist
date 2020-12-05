@@ -5,6 +5,14 @@
 	<key>items</key>
 	<array>
 
+		<!-- EOL warning -->
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>WARNING: Mavalry is now EOL. It will no longer be receiving updates.</string>
+		</dict>
+
 		<!-- general enable/ disable switch -->
 		<dict>
 			<key>cell</key>

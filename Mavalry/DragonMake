@@ -1,0 +1,21 @@
+---
+name: Mavalry
+icmd: killall -9 SpringBoard
+
+all:
+  frameworks: ['UIKit']
+  archs:
+    - arm64
+    - arm64e
+
+Mavalry:
+  dir: Tweak
+  type: tweak
+  logos_files:
+    - "*.xm"
+
+Preferences:
+  dir: Preferences
+  type: prefs
+  objc_files:
+    - "*.m"

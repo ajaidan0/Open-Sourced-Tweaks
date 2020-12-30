@@ -1,0 +1,22 @@
+---
+name: ReachOptions
+icmd: killall -9 SpringBoard
+
+all:
+  archs:
+    - arm64
+    - arm64e
+
+ReachOptions:
+  dir: Tweak
+  type: tweak
+  logos_files:
+    - "*.xm"
+  objc_files:
+    - "*.m"
+
+Preferences:
+  dir: Preferences
+  type: prefs
+  objc_files:
+    - "*.m"

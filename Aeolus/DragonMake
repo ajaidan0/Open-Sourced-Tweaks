@@ -1,0 +1,14 @@
+---
+name: Aeolus
+icmd: killall -9 SpringBoard
+
+all:
+  archs:
+    - arm64
+    - arm64e
+
+Aeolus:
+  dir: Tweak
+  type: tweak
+  logos_files:
+    - Aeolus.xm

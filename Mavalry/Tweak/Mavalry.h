@@ -4,7 +4,10 @@
  * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
 **/
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <UIKit/UIControl.h>
+#import <UIKit/UIViewController.h>
 #import <sys/utsname.h>
 #import <AudioToolbox/AudioServices.h>
 #import <spawn.h>

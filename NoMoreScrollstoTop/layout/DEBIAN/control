@@ -1,9 +1,0 @@
-Package: xyz.monotrix.nomorescrollstotop
-Name: NoMoreScrollstoTop
-Depends: mobilesubstrate, preferenceloader, com.spark.libsparkapplist
-Version: 1.2
-Architecture: iphoneos-arm
-Description: A simple tweak to disable scrollsToTop in **almost** all apps.
-Maintainer: Monotrix
-Author: Monotrix
-Section: Tweaks

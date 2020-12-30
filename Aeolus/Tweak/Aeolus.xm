@@ -4,6 +4,8 @@
  * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
 **/
 
+#import <Foundation/Foundation.h>
+
 %group Tweak
 // Hook UITableView
 %hook UITableView
@@ -18,7 +20,11 @@
     // Get current application/process
     NSString *processName = [[%c(NSBundle) mainBundle] bundleIdentifier];
     // If the process isn't SpringBoard, run our code
-    if (![processName isEqualToString:@"com.apple.springboard"]) {
+    if (![processName isEqualToString:@"com.apple.SpringBoard"]) {
+        NSLog(@"[AE] INJECTING TWEAK AT %f", [[NSDate date] timeIntervalSince1970]);
         %init(Tweak);
+    } else {
+        NSLog(@"[AE] TWEAK IS NOT BEING INJECTED.");
+        return;
     }
 }

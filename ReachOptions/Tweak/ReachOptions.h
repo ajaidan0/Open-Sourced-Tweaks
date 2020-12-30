@@ -4,6 +4,7 @@
  * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
 **/
 
+#import <Foundation/Foundation.h>
 #import "Actions-Structs.h"
 #import "UIDevice+notchedDevice.h"
 #define PLIST_PATH @"/var/mobile/Library/Preferences/xyz.monotrix.reachoptionsprefs.plist"

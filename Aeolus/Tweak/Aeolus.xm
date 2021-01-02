@@ -9,10 +9,12 @@
 %group Tweak
 // Hook UITableView
 %hook UITableView
+
 -(void)setSeparatorStyle:(long long)arg1 {
     // Run original code, but overwrite arg1
     %orig(0);
 }
+
 %end
 %end
 
@@ -23,8 +25,5 @@
     if (![processName isEqualToString:@"com.apple.SpringBoard"]) {
         NSLog(@"[AE] INJECTING TWEAK AT %f", [[NSDate date] timeIntervalSince1970]);
         %init(Tweak);
-    } else {
-        NSLog(@"[AE] TWEAK IS NOT BEING INJECTED.");
-        return;
-    }
+    } else return;
 }

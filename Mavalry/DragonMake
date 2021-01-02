@@ -1,5 +1,9 @@
 ---
 name: Mavalry
+author: Monotrix
+id: xyz.monotrix.mavalry
+version: 2.1-EOL
+depends: mobilesubstrate, firmware (>= 13.0), preferenceloader
 icmd: killall -9 SpringBoard
 
 all:

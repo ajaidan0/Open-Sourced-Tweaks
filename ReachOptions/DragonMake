@@ -1,5 +1,9 @@
 ---
 name: ReachOptions
+author: Monotrix
+id: xyz.monotrix.reachoptions
+version: 1.2.3
+depends: mobilesubstrate, firmware (>= 11.0), preferenceloader
 icmd: killall -9 SpringBoard
 
 all:

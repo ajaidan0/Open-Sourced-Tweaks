@@ -241,7 +241,5 @@
 		if (noSpotlight) %init(HSnoSpotlight);
 		if (reachChevron) %init(ReachChevron);
 		if (reachTimer) %init(ReachTimer);
-	} else {
-		NSLog(@"[MAV] TWEAK IS NOT BEING INJECTED.");
-	}
+	} else return;
 }

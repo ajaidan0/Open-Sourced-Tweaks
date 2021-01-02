@@ -1,23 +1,23 @@
 clean::
-	rm -rf ./*/packages
-	rm -rf ./*/.dragon
-	rm -rf ./*/build.ninja
-	rm -rf ./*/*/.dragon
-	rm -rf ./*/*/build.ninja
+	$(ECHO_NOTHING)rm -rf ./*/packages
+	$(ECHO_NOTHING)rm -rf ./*/.dragon
+	$(ECHO_NOTHING)rm -rf ./*/build.ninja
+	$(ECHO_NOTHING)rm -rf ./*/*/.dragon
+	$(ECHO_NOTHING)rm -rf ./*/*/build.ninja
 
 package::
-	rm -rf ./*/packages
-	rm -rf ./*/.dragon
-	rm -rf ./*/build.ninja
-	rm -rf ./*/*/.dragon
-	rm -rf ./*/*/build.ninja
+	$(ECHO_NOTHING)rm -rf ./*/packages
+	$(ECHO_NOTHING)rm -rf ./*/.dragon
+	$(ECHO_NOTHING)rm -rf ./*/build.ninja
+	$(ECHO_NOTHING)rm -rf ./*/*/.dragon
+	$(ECHO_NOTHING)rm -rf ./*/*/build.ninja
 
 do::
-	rm -rf ./*/packages
-	rm -rf ./*/.dragon
-	rm -rf ./*/build.ninja
-	rm -rf ./*/*/.dragon
-	rm -rf ./*/*/build.ninja
+	$(ECHO_NOTHING)rm -rf ./*/packages
+	$(ECHO_NOTHING)rm -rf ./*/.dragon
+	$(ECHO_NOTHING)rm -rf ./*/build.ninja
+	$(ECHO_NOTHING)rm -rf ./*/*/.dragon
+	$(ECHO_NOTHING)rm -rf ./*/*/build.ninja
 
 filefix::
-	dos2unix ./*/layout/DEBIAN/*
+	$(ECHO_NOTHING)dos2unix ./*/layout/DEBIAN/*

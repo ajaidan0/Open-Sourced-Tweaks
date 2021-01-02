@@ -1,5 +1,9 @@
 ---
 name: Aeolus
+author: Monotrix
+id: xyz.monotrix.aeolus
+version: 1.0.4
+depends: mobilesubstrate
 icmd: killall -9 SpringBoard
 
 all:

@@ -1,5 +1,3 @@
-rm -rf /var/mobile/Library/Preferences/xyz.monotrix.mavalryprefs.plist
-echo "Prefs file removed..."
-rm -rf /var/mobile/.mavalry
-echo "Removed version tracker."
+#!/bin/bash
+
 echo "Thanks for trying Mavalry!"

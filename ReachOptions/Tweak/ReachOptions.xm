@@ -1,5 +1,5 @@
 /**
- * ReachOptions : ReachOptions.x
+ * ReachOptions : ReachOptions.xm
  *
  * Copyright (c) Monotrix 2020- (https://github.com/Monotrix)
 **/
@@ -12,10 +12,10 @@
 %hook SBReachabilityManager
 
 -(void)_setKeepAliveTimer {
-    /***
+    /**
      * This is to disable the timer on reachability.
      * I did this because sometimes the menu would dismiss (much like reachability) without any notice.
-    ***/
+    **/
     return;
 }
 

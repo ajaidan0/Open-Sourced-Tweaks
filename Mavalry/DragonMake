@@ -2,6 +2,7 @@
 name: Mavalry
 author: Monotrix
 id: xyz.monotrix.mavalry
+desc: The ultimate tweak for iOS Customization. (NOTE: EOL)
 version: 2.1-EOL
 depends: mobilesubstrate, firmware (>= 13.0), preferenceloader
 icmd: killall -9 SpringBoard

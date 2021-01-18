@@ -2,6 +2,7 @@
 name: Aeolus
 author: Monotrix
 id: xyz.monotrix.aeolus
+desc: A simple tweak that removes table seperators, without crashes.
 version: 1.0.4
 depends: mobilesubstrate
 icmd: killall -9 SpringBoard

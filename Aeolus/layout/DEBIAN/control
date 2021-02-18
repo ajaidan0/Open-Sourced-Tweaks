@@ -1,0 +1,9 @@
+Package: xyz.monotrix.aeolus
+Name: Aeolus
+Version: 1.0.5
+Architecture: iphoneos-arm
+Description: A tweak to remove Table Separators system-wide (without crashes).
+Maintainer: Monotrix
+Author: Monotrix
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)

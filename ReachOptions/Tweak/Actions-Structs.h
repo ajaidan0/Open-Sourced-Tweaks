@@ -5,6 +5,7 @@
 **/
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #include <unistd.h>
 
 @interface SBControlCenterController

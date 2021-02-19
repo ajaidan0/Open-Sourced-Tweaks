@@ -1,7 +1,5 @@
 export GO_EASY_ON_ME = 1
-
-export SYSROOT = $(THEOS)/sdks/iPhoneOS14.0.sdk
-
+export PREFIX=$(THEOS)/toolchain/Xcode.xctoolchain/usr/bin/
 export ARCHS = arm64 arm64e
 
 include $(THEOS)/makefiles/common.mk

@@ -1,8 +1,8 @@
 Package: xyz.monotrix.aeolus
 Name: Aeolus
-Version: 1.0.5
+Version: 1.0.6
 Architecture: iphoneos-arm
-Description: A tweak to remove Table Separators system-wide (without crashes).
+Description: A tweak to remove Table Separators system-wide (without crashes). Discord link: https://discord.gg/xdUkRxuvGQ
 Maintainer: Monotrix
 Author: Monotrix
 Section: Tweaks

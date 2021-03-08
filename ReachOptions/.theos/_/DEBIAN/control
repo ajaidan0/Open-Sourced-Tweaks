@@ -1,0 +1,10 @@
+Package: xyz.monotrix.reachoptions
+Name: ReachOptions
+Architecture: iphoneos-arm
+Description: A tweak to add options to reachability. Discord link: https://discord.gg/xdUkRxuvGQ
+Maintainer: Monotrix
+Author: Monotrix
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, firmware (>= 11.0)
+Version: 1.2.4-3+debug
+Installed-Size: 352

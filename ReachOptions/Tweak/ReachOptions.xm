@@ -61,7 +61,9 @@
         shouldCancel = TRUE;
     }
     if (shouldCancel) {
-        [alert addAction:reach];
+        if (![UIDevice.currentDevice isAnIpod] || ![UIDevice.currentDevice isAnIpad]) {
+        	[alert addAction:reach];
+        }
         [alert addAction:cancel];
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
     }
@@ -109,7 +111,9 @@
         shouldCancel = TRUE;
     }
     if (shouldCancel) {
-        [alert addAction:reach];
+	    if (![UIDevice.currentDevice isAnIpod] || ![UIDevice.currentDevice isAnIpad]) {
+        	[alert addAction:reach];
+	    }
         [alert addAction:cancel];
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
     }

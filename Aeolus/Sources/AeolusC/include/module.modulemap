@@ -1,0 +1,4 @@
+module AeolusC {
+    umbrella "."
+    export *
+}
